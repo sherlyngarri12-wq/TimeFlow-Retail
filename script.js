@@ -76,8 +76,23 @@ function guardarDatos(){
     document.querySelectorAll(".card h2")[3].innerText =
     eficiencia + "%";
 
-    document.getElementById("barraInterna").style.width =
-    eficiencia + "%";
+    let rendimiento =
+(clientes * 2) - (tiempo * 3) + (cajas * 10);
+
+if(rendimiento > 100){
+
+    rendimiento = 100;
+
+}
+
+if(rendimiento < 10){
+
+    rendimiento = 10;
+
+}
+
+document.getElementById("barraInterna").style.width =
+rendimiento + "%";
 
     alert("Datos actualizados correctamente");
 
