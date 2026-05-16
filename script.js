@@ -56,7 +56,10 @@ function guardarDatos(){
 
     document.querySelectorAll(".card h2")[3].innerText = eficiencia + "%";
 
-    alert("Datos actualizados correctamente");
+document.getElementById("barraInterna").style.width =
+eficiencia + "%";
+
+alert("Datos actualizados correctamente");
 
 }
 
