@@ -100,6 +100,57 @@ rendimiento + "%";
 document.getElementById("barraEfectividad").style.width =
 eficiencia + "%";
 
+document.getElementById(
+"rendimientoCajas"
+).innerText =
+eficiencia + "%";
+
+document.getElementById(
+"rendimientoInventario"
+).innerText =
+(eficiencia - 5) + "%";
+
+document.getElementById(
+"rendimientoDistribucion"
+).innerText =
+(eficiencia - 10) + "%";
+
+if(eficiencia < 60){
+
+    document.getElementById(
+    "estadoCajas"
+    ).innerText =
+    "Saturado";
+
+    document.getElementById(
+    "estadoInventario"
+    ).innerText =
+    "Riesgo";
+
+    document.getElementById(
+    "estadoDistribucion"
+    ).innerText =
+    "Retrasos";
+
+}else{
+
+    document.getElementById(
+    "estadoCajas"
+    ).innerText =
+    "Operando";
+
+    document.getElementById(
+    "estadoInventario"
+    ).innerText =
+    "Estable";
+
+    document.getElementById(
+    "estadoDistribucion"
+    ).innerText =
+    "Alta demanda";
+
+}
+
 document.getElementById("eficienciaActual").innerText =
 eficiencia + "%";
 
@@ -108,6 +159,52 @@ clientes;
 
 document.getElementById("tiempoRespuesta").innerText =
 tiempo + " min";
+
+let merma = 8;
+
+let devoluciones = 5;
+
+let penalizaciones = 2;
+
+let jornadasLargas = 1;
+
+/* MERMA */
+
+if(merma >= 5){
+
+    eficiencia -= 5;
+
+}
+
+/* DEVOLUCIONES */
+
+if(devoluciones >= 5){
+
+    eficiencia -= 3;
+
+}
+
+/* PROVEEDORES */
+
+if(penalizaciones >= 2){
+
+    eficiencia -= 4;
+
+}
+
+/* JORNADAS */
+
+if(jornadasLargas >= 1){
+
+    eficiencia -= 6;
+
+}
+
+if(eficiencia < 10){
+
+    eficiencia = 10;
+
+}
 
 if(eficiencia >= 85){
 
@@ -379,6 +476,51 @@ document.getElementById(
 "capacidadAlmacen"
 ).innerText =
 capacidad + "%";
+
+let productosRiesgo =
+parseInt(
+document.getElementById(
+"bajoStock"
+).innerText
+);
+
+let eficienciaActual =
+parseInt(
+document.getElementById(
+"eficienciaActual"
+).innerText
+);
+
+if(productosRiesgo >= 3){
+
+    eficienciaActual -= 10;
+
+}
+
+if(eficienciaActual < 10){
+
+    eficienciaActual = 10;
+
+}
+
+document.getElementById(
+"eficienciaActual"
+).innerText =
+eficienciaActual + "%";
+
+document.getElementById(
+"barraEfectividad"
+).style.width =
+eficienciaActual + "%";
+
+if(capacidad >= 90){
+
+    document.getElementById(
+    "estadoOperacion"
+    ).innerText =
+    "⚠ Almacén saturado";
+
+}
 
     alert("Producto agregado correctamente");
 
