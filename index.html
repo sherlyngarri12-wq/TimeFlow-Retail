@@ -415,18 +415,31 @@ style="display:none;">
 
         <h1>Control de Merma</h1>
 
-        <table id="tablaInventario">
+        <table>
 
-       <table>
+            <tr>
+                <th>Producto</th>
+                <th>Merma</th>
+                <th>Estado</th>
+            </tr>
 
-    <tr>
-        <th>Producto</th>
-        <th>Stock</th>
-        <th>Picking</th>
-        <th>Estado</th>
-    </tr>
+            <tr>
+                <td>Frutas</td>
+                <td>8%</td>
+                <td style="color:red;">
+                    Alta
+                </td>
+            </tr>
 
-    
+            <tr>
+                <td>Lácteos</td>
+                <td>3%</td>
+                <td>
+                    Controlada
+                </td>
+            </tr>
+
+        </table>
 
     </div>
 
@@ -442,6 +455,35 @@ style="display:none;">
 
         <h1>Efectividad Operativa</h1>
 
+        <div class="cards">
+
+            <div class="card">
+                <h2 id="eficienciaActual">92%</h2>
+                <p>Eficiencia actual</p>
+            </div>
+
+            <div class="card">
+                <h2 id="ordenesHora">35</h2>
+                <p>Órdenes por hora</p>
+            </div>
+
+            <div class="card">
+                <h2 id="tiempoRespuesta">4 min</h2>
+                <p>Tiempo de respuesta</p>
+            </div>
+
+        </div>
+
+        <div class="historial">
+
+            <h2>Estado Operativo</h2>
+
+            <p id="estadoOperacion">
+                Operación estable y eficiente
+            </p>
+
+        </div>
+
         <div class="grafica">
 
             <h2>Rendimiento General</h2>
@@ -449,15 +491,40 @@ style="display:none;">
             <div class="barra">
 
                 <div id="barraEfectividad"
-                style="width:94%;"></div>
+                style="width:92%;">
+                </div>
 
             </div>
 
-            <p style="margin-top:15px;">
-                94% de efectividad operativa
-            </p>
-
         </div>
+
+        <table>
+
+            <tr>
+                <th>Área</th>
+                <th>Estado</th>
+                <th>Rendimiento</th>
+            </tr>
+
+            <tr>
+                <td>Cajas</td>
+                <td>Operando</td>
+                <td>94%</td>
+            </tr>
+
+            <tr>
+                <td>Inventario</td>
+                <td>Estable</td>
+                <td>89%</td>
+            </tr>
+
+            <tr>
+                <td>Distribución</td>
+                <td>Alta demanda</td>
+                <td>78%</td>
+            </tr>
+
+        </table>
 
     </div>
 
