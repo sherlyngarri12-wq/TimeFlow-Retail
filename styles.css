@@ -91,14 +91,16 @@ h1{
 }
 }
 
-.card{
+.card
+    .card{
     background:linear-gradient(135deg, #1D2D44, #3E5C76);
     color:white;
     padding:25px;
     border-radius:18px;
-    width:220px;
     box-shadow:0 8px 20px rgba(0,0,0,0.12);
     transition:0.3s;
+
+    min-width:0;
 }
 
 .card:hover{
@@ -323,9 +325,11 @@ body{
 /* TARJETAS */
 
 .cards{
+
     display:grid;
-    grid-template-columns:repeat(4,1fr);
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
     gap:20px;
+    margin-bottom:30px;
 }
 
 .card{

@@ -1,8 +1,11 @@
 function login(){
 
+
     document.getElementById("loginScreen").style.display = "none";
 
-    document.getElementById("dashboardSection").style.display = "block";
+    document.getElementById("dashboard").style.display = "block";
+
+    document.getElementById("sidebar").style.display = "block";
 
 }
 
@@ -146,6 +149,8 @@ function reporte(){
 }
 
 function logout(){
+
+    document.getElementById("sidebar").style.display = "none";
 
     location.reload();
 
