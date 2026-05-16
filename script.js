@@ -270,6 +270,26 @@ function agregarProducto(){
 
     }
 
+    let capacidad =
+parseInt(
+document.getElementById(
+"capacidadAlmacen"
+).innerText
+);
+
+capacidad += 2;
+
+if(capacidad > 100){
+
+    capacidad = 100;
+
+}
+
+document.getElementById(
+"capacidadAlmacen"
+).innerText =
+capacidad + "%";
+
     alert("Producto agregado correctamente");
 
 }
