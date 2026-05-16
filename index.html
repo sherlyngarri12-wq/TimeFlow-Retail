@@ -297,22 +297,107 @@ style="display:none;">
 
         <h1>Indicadores de Alcance</h1>
 
+        <!-- TARJETAS -->
+
         <div class="cards">
 
             <div class="card">
-                <h2>92%</h2>
+                <h2 id="ordenesCompletadas">124</h2>
                 <p>Órdenes completadas</p>
             </div>
 
             <div class="card">
-                <h2>85%</h2>
+                <h2 id="alcanceOperativo">92%</h2>
                 <p>Alcance operativo</p>
             </div>
 
             <div class="card">
-                <h2>4 min</h2>
+                <h2 id="respuestaPromedio">3 min</h2>
                 <p>Tiempo de respuesta</p>
             </div>
+
+        </div>
+
+        <!-- HORARIOS -->
+
+        <div class="grafica">
+
+            <h2>Horarios Operativos</h2>
+
+            <table>
+
+                <tr>
+                    <th>Horario</th>
+                    <th>Clientes</th>
+                    <th>Estado</th>
+                </tr>
+
+                <tr>
+                    <td>08:00 - 10:00</td>
+                    <td id="clientesManana">45</td>
+                    <td style="color:green;">
+                        Flujo normal
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>12:00 - 15:00</td>
+                    <td id="clientesPico">90</td>
+                    <td style="color:red;">
+                        Hora pico
+                    </td>
+                </tr>
+
+            </table>
+
+        </div>
+
+        <!-- ORDENES -->
+
+        <div class="grafica">
+
+            <h2>Órdenes Emitidas</h2>
+
+            <div class="cards">
+
+                <div class="card">
+                    <h2 id="ordenesPendientes">12</h2>
+                    <p>Pendientes</p>
+                </div>
+
+                <div class="card">
+                    <h2 id="ordenesCanceladas">3</h2>
+                    <p>Canceladas</p>
+                </div>
+
+                <div class="card">
+                    <h2 id="ordenesExitosas">109</h2>
+                    <p>Exitosas</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- RENDIMIENTO -->
+
+        <div class="grafica">
+
+            <h2>Rendimiento General</h2>
+
+            <div class="barra">
+
+                <div id="barraIndicadores"
+                style="width:92%;"></div>
+
+            </div>
+
+            <p id="textoIndicador"
+            style="margin-top:15px;">
+
+                Operación estable y eficiente
+
+            </p>
 
         </div>
 

@@ -94,6 +94,64 @@ if(rendimiento < 10){
 document.getElementById("barraInterna").style.width =
 rendimiento + "%";
 
+document.getElementById(
+"ordenesCompletadas"
+).innerText = clientes;
+
+document.getElementById(
+"alcanceOperativo"
+).innerText = eficiencia + "%";
+
+document.getElementById(
+"respuestaPromedio"
+).innerText = tiempo + " min";
+
+document.getElementById(
+"clientesPico"
+).innerText =
+Math.round(clientes * 0.7);
+
+document.getElementById(
+"clientesManana"
+).innerText =
+Math.round(clientes * 0.3);
+
+document.getElementById(
+"ordenesPendientes"
+).innerText =
+Math.round(clientes * 0.1);
+
+document.getElementById(
+"ordenesCanceladas"
+).innerText =
+Math.round(clientes * 0.03);
+
+document.getElementById(
+"ordenesExitosas"
+).innerText =
+Math.round(clientes * 0.87);
+
+document.getElementById(
+"barraIndicadores"
+).style.width =
+eficiencia + "%";
+
+if(eficiencia < 50){
+
+    document.getElementById(
+    "textoIndicador"
+    ).innerText =
+    "Operación crítica detectada";
+
+}else{
+
+    document.getElementById(
+    "textoIndicador"
+    ).innerText =
+    "Operación estable y eficiente";
+
+}
+
     alert("Datos actualizados correctamente");
 
 }
