@@ -67,7 +67,47 @@ historial.prepend(nuevoRegistro);
 
 function reporte(){
 
-    alert("Reporte generado exitosamente");
+    function reporte(){
+
+    let contenido =
+`REPORTE OPERATIVO - TIMEFLOW RETAIL
+
+Fecha: ${new Date().toLocaleDateString()}
+Hora: ${new Date().toLocaleTimeString()}
+
+-----------------------------------
+
+Tiempo promedio:
+${document.querySelectorAll(".card h2")[0].innerText}
+
+Cajas activas:
+${document.querySelectorAll(".card h2")[1].innerText}
+
+Clientes atendidos:
+${document.querySelectorAll(".card h2")[2].innerText}
+
+Eficiencia:
+${document.querySelectorAll(".card h2")[3].innerText}
+
+-----------------------------------
+
+Estado del sistema:
+Operativo
+
+Alertas detectadas:
+- Caja 2 presenta saturación
+- Redistribución recomendada
+`;
+
+    let archivo = new Blob([contenido], {type:"text/plain"});
+
+    let enlace = document.createElement("a");
+
+    enlace.href = URL.createObjectURL(archivo);
+
+    enlace.download = "Reporte_TimeFlow.txt";
+
+    enlace.click();
 
 }
 
