@@ -32,6 +32,12 @@ function guardarDatos(){
 
     let eficiencia = Math.round((clientes / (cajas * 30)) * 100);
 
+if(eficiencia > 100){
+
+    eficiencia = 100;
+
+}
+
     if(eficiencia < 50){
 
         alert("⚠ Eficiencia operativa baja detectada");
