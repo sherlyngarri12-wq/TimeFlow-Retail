@@ -70,6 +70,37 @@ function guardarDatos(){
     document.querySelectorAll(".card h2")[1].innerText =
     cajas;
 
+    let tablaCajas =
+document.getElementById("tablaCajas");
+
+tablaCajas.innerHTML = "";
+
+for(let i = 1; i <= cajas; i++){
+
+    let fila =
+    document.createElement("tr");
+
+    let tiempoCaja =
+    Math.floor(Math.random() * 10) + 1;
+
+    let estado = "Activa";
+
+    if(tiempoCaja >= 7){
+
+        estado = "Saturada";
+
+    }
+
+    fila.innerHTML =
+
+    "<td>Caja " + i + "</td>" +
+    "<td>" + estado + "</td>" +
+    "<td>" + tiempoCaja + " min</td>";
+
+    tablaCajas.appendChild(fila);
+
+}
+
     document.querySelectorAll(".card h2")[2].innerText =
     clientes;
 
