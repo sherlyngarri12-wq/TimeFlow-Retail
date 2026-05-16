@@ -1,6 +1,5 @@
 function login(){
 
-
     document.getElementById("loginScreen").style.display = "none";
 
     document.getElementById("dashboardSection").style.display = "block";
@@ -17,15 +16,20 @@ function actualizar(){
 
 function guardarDatos(){
 
-    let tiempo = document.getElementById("nuevoTiempo").value;
+    let tiempo =
+    document.getElementById("nuevoTiempo").value;
 
-    let cajas = document.getElementById("nuevasCajas").value;
+    let cajas =
+    document.getElementById("nuevasCajas").value;
 
-    let clientes = document.getElementById("nuevosClientes").value;
+    let clientes =
+    document.getElementById("nuevosClientes").value;
 
-    let historial = document.getElementById("listaHistorial");
+    let historial =
+    document.getElementById("listaHistorial");
 
-    let nuevoRegistro = document.createElement("li");
+    let nuevoRegistro =
+    document.createElement("li");
 
     nuevoRegistro.innerHTML =
     new Date().toLocaleTimeString() +
@@ -33,13 +37,14 @@ function guardarDatos(){
 
     historial.prepend(nuevoRegistro);
 
-    let eficiencia = Math.round((clientes / (cajas * 30)) * 100);
+    let eficiencia =
+    Math.round((clientes / (cajas * 30)) * 100);
 
-if(eficiencia > 100){
+    if(eficiencia > 100){
 
-    eficiencia = 100;
+        eficiencia = 100;
 
-}
+    }
 
     if(eficiencia < 50){
 
@@ -49,26 +54,32 @@ if(eficiencia > 100){
 
     if(tiempo >= 60){
 
-        let horas = (tiempo / 60).toFixed(1);
+        let horas =
+        (tiempo / 60).toFixed(1);
 
-        document.querySelectorAll(".card h2")[0].innerText = horas + " h";
+        document.querySelectorAll(".card h2")[0].innerText =
+        horas + " h";
 
     }else{
 
-        document.querySelectorAll(".card h2")[0].innerText = tiempo + " min";
+        document.querySelectorAll(".card h2")[0].innerText =
+        tiempo + " min";
 
     }
 
-    document.querySelectorAll(".card h2")[1].innerText = cajas;
+    document.querySelectorAll(".card h2")[1].innerText =
+    cajas;
 
-    document.querySelectorAll(".card h2")[2].innerText = clientes;
+    document.querySelectorAll(".card h2")[2].innerText =
+    clientes;
 
-    document.querySelectorAll(".card h2")[3].innerText = eficiencia + "%";
+    document.querySelectorAll(".card h2")[3].innerText =
+    eficiencia + "%";
 
-document.getElementById("barraInterna").style.width =
-eficiencia + "%";
+    document.getElementById("barraInterna").style.width =
+    eficiencia + "%";
 
-alert("Datos actualizados correctamente");
+    alert("Datos actualizados correctamente");
 
 }
 
@@ -82,22 +93,24 @@ function reporte(){
 
     doc.setFontSize(22);
 
-    doc.text("Reporte Operativo", 20, 20);
+    doc.text("Reporte Operativo",20,20);
 
     doc.setFontSize(14);
 
-    doc.text("TimeFlow Retail", 20, 30);
+    doc.text("TimeFlow Retail",20,30);
 
     doc.line(20,35,190,35);
 
     doc.text(
-    "Fecha: " + new Date().toLocaleDateString(),
+    "Fecha: " +
+    new Date().toLocaleDateString(),
     20,
     50
     );
 
     doc.text(
-    "Hora: " + new Date().toLocaleTimeString(),
+    "Hora: " +
+    new Date().toLocaleTimeString(),
     20,
     60
     );
@@ -150,8 +163,6 @@ function reporte(){
 
 function logout(){
 
-    document.getElementById("sidebar").style.display = "none";
-
     location.reload();
 
 }
@@ -181,6 +192,7 @@ function mostrarSeccion(id){
 
     });
 
-    document.getElementById(id).style.display = "block";
+    document.getElementById(id).style.display =
+    "block";
 
 }

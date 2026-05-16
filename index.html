@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>TimeFlow Retail</title>
 
     <link rel="icon" type="image/png" href="logo.png">
@@ -14,37 +13,64 @@
 
 <body>
 
-    <div class="login" id="loginScreen">
+<!-- LOGIN -->
 
-        <div class="login-box">
+<div class="login" id="loginScreen">
 
-            <h1>TimeFlow Retail</h1>
+    <div class="login-box">
 
-            <p>Sistema Inteligente de Gestión Retail</p>
+        <h1>TimeFlow Retail</h1>
 
-            <input type="text" placeholder="Usuario">
+        <p>Sistema Inteligente de Gestión Retail</p>
 
-            <input type="password" placeholder="Contraseña">
+        <input type="text" placeholder="Usuario">
 
-            <button onclick="login()">
-                Iniciar Sesión
-            </button>
+        <input type="password" placeholder="Contraseña">
 
-        </div>
+        <button onclick="login()">
+            Iniciar Sesión
+        </button>
 
     </div>
 
-    <div class="dashboard section"
+</div>
+
+<!-- MENU -->
+
+<div class="sidebar" id="sidebar" style="display:none;">
+
+    <h2>TimeFlow</h2>
+
+    <button onclick="mostrarSeccion('dashboardSection')">
+        Dashboard
+    </button>
+
+    <button onclick="mostrarSeccion('inventarioSection')">
+        Inventario
+    </button>
+
+    <button onclick="mostrarSeccion('reportesSection')">
+        Reportes
+    </button>
+
+</div>
+
+<!-- DASHBOARD -->
+
+<div class="section"
 id="dashboardSection"
 style="display:none;">
+
+    <div class="dashboard">
 
         <div class="topbar">
 
             <h2>TimeFlow Retail</h2>
 
-            <p id="fecha"></p>
-
-<p id="reloj"></p>
+            <div>
+                <p id="fecha"></p>
+                <p id="reloj"></p>
+            </div>
 
         </div>
 
@@ -98,51 +124,52 @@ style="display:none;">
 
         <div class="alertas">
 
-    <h2>Alertas</h2>
+            <h2>Alertas</h2>
 
-    <p>⚠ Caja 2 presenta saturación.</p>
+            <p>⚠ Caja 2 presenta saturación.</p>
 
-    <p>⚠ Redistribución recomendada.</p>
+            <p>⚠ Redistribución recomendada.</p>
 
-</div>
+        </div>
 
-<div class="historial">
+        <div class="historial">
 
-    <h2>Actividad en Tiempo Real</h2>
+            <h2>Actividad en Tiempo Real</h2>
 
-    <ul id="listaHistorial">
+            <ul id="listaHistorial">
 
-        <li>Sistema iniciado correctamente</li>
+                <li>Sistema iniciado correctamente</li>
 
-    </ul>
+            </ul>
 
-</div>
+        </div>
 
-<div class="grafica">
+        <div class="grafica">
 
-    <h2>Rendimiento Operativo</h2>
+            <h2>Rendimiento Operativo</h2>
 
-    <div class="barra">
+            <div class="barra">
 
-        <div id="barraInterna"></div>
+                <div id="barraInterna"></div>
 
-    </div>
+            </div>
 
-    </div>
+        </div>
 
-<button onclick="actualizar()">
-    Actualizar Datos
-</button>
+        <button onclick="actualizar()">
+            Actualizar Datos
+        </button>
 
-<button onclick="reporte()">
-    Generar Reporte
-</button>
+        <button onclick="reporte()">
+            Generar Reporte
+        </button>
 
-<button onclick="logout()">
-    Cerrar Sesión
-</button>
+        <button onclick="logout()">
+            Cerrar Sesión
+        </button>
 
-        <div id="panelDatos" style="display:none; margin-top:20px;">
+        <div id="panelDatos"
+        style="display:none; margin-top:20px;">
 
             <input type="number"
             id="nuevoTiempo"
@@ -164,7 +191,11 @@ style="display:none;">
 
     </div>
 
-    <div class="section"
+</div>
+
+<!-- INVENTARIO -->
+
+<div class="section"
 id="inventarioSection"
 style="display:none;">
 
@@ -203,6 +234,8 @@ style="display:none;">
 
 </div>
 
+<!-- REPORTES -->
+
 <div class="section"
 id="reportesSection"
 style="display:none;">
@@ -217,48 +250,11 @@ style="display:none;">
 
     </div>
 
-    <div class="sidebar"
-id="sidebar"
-style="display:none;">
-
-    <h2>TimeFlow</h2>
-
-    <button onclick="mostrarSeccion('dashboardSection')">
-        Dashboard
-    </button>
-
-    <button onclick="mostrarSeccion('inventarioSection')">
-        Inventario
-    </button>
-
-    <button onclick="mostrarSeccion('reportesSection')">
-        Reportes
-    </button>
-
 </div>
 
-    <script src="script.js"></script>
+<script src="script.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
 </body>
-
-<div class="sidebar" id="sidebar" style="display:none;">
-
-    <h2>TimeFlow</h2>
-
-    <button onclick="mostrarSeccion('dashboardSection')">
-        Dashboard
-    </button>
-
-    <button onclick="mostrarSeccion('inventarioSection')">
-        Inventario
-    </button>
-
-    <button onclick="mostrarSeccion('reportesSection')">
-        Reportes
-    </button>
-
-</div>
-
 </html>

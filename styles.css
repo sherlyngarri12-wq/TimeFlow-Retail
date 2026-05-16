@@ -83,8 +83,9 @@ body{
 .section{
     margin-left:280px;
     padding:30px;
-    display:none;
 }
+
+/* DASHBOARD */
 
 .dashboard{
     background:white;
@@ -191,11 +192,11 @@ button:hover{
     background:#3E5C76;
 }
 
-/* CAJAS */
+/* ALERTAS / HISTORIAL / GRAFICA */
 
+.alertas,
 .historial,
-.grafica,
-.alertas{
+.grafica{
     background:white;
     padding:25px;
     border-radius:18px;
@@ -233,45 +234,17 @@ button:hover{
     transition:1s;
 }
 
-.sidebar{
-    display:none;
+/* PANEL */
+
+#panelDatos{
+    margin-top:30px;
 }
 
-/* MENU LATERAL */
-
-.sidebar{
-    width:240px;
-    height:100vh;
-    background:#1D2D44;
-    position:fixed;
-    left:0;
-    top:0;
-    padding:30px 20px;
-    box-sizing:border-box;
-    box-shadow:5px 0 20px rgba(0,0,0,0.1);
-}
-
-.sidebar h2{
-    color:white;
-    margin-bottom:40px;
-    font-size:32px;
-}
-
-.sidebar button{
+#panelDatos input{
     width:100%;
+    padding:12px;
     margin-bottom:15px;
-    background:#3E5C76;
-    border-radius:12px;
-    font-size:16px;
-}
-
-.sidebar button:hover{
-    background:#748CAB;
-}
-
-/* SECCIONES */
-
-.section{
-    margin-left:280px;
-    padding:30px;
+    border:1px solid #ccc;
+    border-radius:10px;
+    box-sizing:border-box;
 }
