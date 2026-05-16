@@ -211,3 +211,65 @@ function mostrarSeccion(id){
     "block";
 
 }
+
+function agregarProducto(){
+
+    let producto =
+    document.getElementById("productoNuevo").value;
+
+    let stock =
+    document.getElementById("stockNuevo").value;
+
+    let picking =
+    document.getElementById("pickingNuevo").value;
+
+    let estado = "Disponible";
+
+    if(stock < 30){
+
+        estado =
+        "<span style='color:red;'>Bajo stock</span>";
+
+    }
+
+    let tabla =
+    document.getElementById("tablaInventario");
+
+    let nuevaFila =
+    document.createElement("tr");
+
+    nuevaFila.innerHTML =
+    "<td>" + producto + "</td>" +
+    "<td>" + stock + "</td>" +
+    "<td>" + picking + "</td>" +
+    "<td>" + estado + "</td>";
+
+    tabla.appendChild(nuevaFila);
+
+    let total =
+    document.querySelectorAll(
+    "#tablaInventario tr"
+    ).length;
+
+    document.getElementById(
+    "totalProductos"
+    ).innerText = total;
+
+    if(stock < 30){
+
+        let riesgo =
+        parseInt(
+        document.getElementById(
+        "bajoStock"
+        ).innerText
+        );
+
+        document.getElementById(
+        "bajoStock"
+        ).innerText = riesgo + 1;
+
+    }
+
+    alert("Producto agregado correctamente");
+
+}
