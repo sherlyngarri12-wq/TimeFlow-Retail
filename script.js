@@ -22,37 +22,33 @@ function guardarDatos(){
 
     let historial = document.getElementById("listaHistorial");
 
-let nuevoRegistro = document.createElement("li");
+    let nuevoRegistro = document.createElement("li");
 
-nuevoRegistro.innerHTML =
-new Date().toLocaleTimeString() +
-" - Datos operativos actualizados";
+    nuevoRegistro.innerHTML =
+    new Date().toLocaleTimeString() +
+    " - Datos operativos actualizados";
 
-historial.prepend(nuevoRegistro);
+    historial.prepend(nuevoRegistro);
 
-    
-    // CALCULAR EFICIENCIA AUTOMÁTICAMENTE
     let eficiencia = Math.round((clientes / (cajas * 30)) * 100);
 
     if(eficiencia < 50){
 
-    alert("⚠ Eficiencia operativa baja detectada");
+        alert("⚠ Eficiencia operativa baja detectada");
 
-}
+    }
 
-    
-    // ACTUALIZAR TARJETAS
     if(tiempo >= 60){
 
-    let horas = (tiempo / 60).toFixed(1);
+        let horas = (tiempo / 60).toFixed(1);
 
-    document.querySelectorAll(".card h2")[0].innerText = horas + " h";
+        document.querySelectorAll(".card h2")[0].innerText = horas + " h";
 
-}else{
+    }else{
 
-    document.querySelectorAll(".card h2")[0].innerText = tiempo + " min";
+        document.querySelectorAll(".card h2")[0].innerText = tiempo + " min";
 
-}
+    }
 
     document.querySelectorAll(".card h2")[1].innerText = cajas;
 
@@ -60,14 +56,11 @@ historial.prepend(nuevoRegistro);
 
     document.querySelectorAll(".card h2")[3].innerText = eficiencia + "%";
 
-    
     alert("Datos actualizados correctamente");
 
 }
 
 function reporte(){
-
-    function reporte(){
 
     let contenido =
 `REPORTE OPERATIVO - TIMEFLOW RETAIL
