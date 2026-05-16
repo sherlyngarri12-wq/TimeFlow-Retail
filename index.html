@@ -430,31 +430,67 @@ style="display:none;">
 
         <h1>Control de Merma</h1>
 
+        <div class="cards">
+
+            <div class="card">
+                <h2 id="porcentajeMerma">0%</h2>
+                <p>Merma general</p>
+            </div>
+
+            <div class="card">
+                <h2 id="productosPerdidos">0</h2>
+                <p>Productos perdidos</p>
+            </div>
+
+            <div class="card">
+                <h2 id="impactoFinanciero">$0</h2>
+                <p>Impacto financiero</p>
+            </div>
+
+        </div>
+
         <table>
 
             <tr>
-                <th>Producto</th>
-                <th>Merma</th>
+                <th>Área</th>
+                <th>Riesgo</th>
                 <th>Estado</th>
             </tr>
 
             <tr>
-                <td>Frutas</td>
-                <td>8%</td>
-                <td style="color:red;">
-                    Alta
+                <td>Almacén</td>
+                <td id="riesgoAlmacen">
+                    Bajo
+                </td>
+                <td id="estadoAlmacen">
+                    Estable
                 </td>
             </tr>
 
             <tr>
-                <td>Lácteos</td>
-                <td>3%</td>
-                <td>
-                    Controlada
+                <td>Distribución</td>
+                <td id="riesgoDistribucion">
+                    Bajo
+                </td>
+                <td id="estadoDistribucionMerma">
+                    Normal
                 </td>
             </tr>
 
         </table>
+
+        <div class="grafica">
+
+            <h2>Impacto Operativo</h2>
+
+            <div class="barra">
+
+                <div id="barraMerma"
+                style="width:0%;"></div>
+
+            </div>
+
+        </div>
 
     </div>
 

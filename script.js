@@ -610,6 +610,74 @@ if(capacidad >= 90){
 
 }
 
+let merma = 0;
+
+/* STOCK BAJO */
+
+if(stock < 30){
+
+    merma += 10;
+
+}
+
+/* SATURACION */
+
+if(capacidad >= 80){
+
+    merma += 15;
+
+}
+
+/* ACTUALIZAR */
+
+document.getElementById(
+"porcentajeMerma"
+).innerText =
+merma + "%";
+
+document.getElementById(
+"productosPerdidos"
+).innerText =
+Math.round(merma / 2);
+
+document.getElementById(
+"impactoFinanciero"
+).innerText =
+"$" + (merma * 250);
+
+document.getElementById(
+"barraMerma"
+).style.width =
+merma + "%";
+
+/* ALERTAS */
+
+if(merma >= 15){
+
+    document.getElementById(
+    "riesgoAlmacen"
+    ).innerText =
+    "Alto";
+
+    document.getElementById(
+    "estadoAlmacen"
+    ).innerText =
+    "Riesgo operativo";
+
+}else{
+
+    document.getElementById(
+    "riesgoAlmacen"
+    ).innerText =
+    "Bajo";
+
+    document.getElementById(
+    "estadoAlmacen"
+    ).innerText =
+    "Estable";
+
+}
+
     alert("Producto agregado correctamente");
 
 }
