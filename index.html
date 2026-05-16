@@ -227,6 +227,25 @@ style="display:none;">
 
         <h1>Inventario</h1>
 
+        <div class="cards">
+
+    <div class="card">
+        <h2 id="totalProductos">2</h2>
+        <p>Productos registrados</p>
+    </div>
+
+    <div class="card">
+        <h2 id="bajoStock">1</h2>
+        <p>Productos en riesgo</p>
+    </div>
+
+    <div class="card">
+        <h2>85%</h2>
+        <p>Capacidad almacén</p>
+    </div>
+
+</div>
+
         <table>
 
             <tr>
@@ -255,6 +274,28 @@ style="display:none;">
         </table>
 
     </div>
+
+    <div id="panelInventario">
+
+    <h2>Agregar Producto</h2>
+
+    <input type="text"
+    id="productoNuevo"
+    placeholder="Producto">
+
+    <input type="number"
+    id="stockNuevo"
+    placeholder="Stock">
+
+    <input type="number"
+    id="pickingNuevo"
+    placeholder="Picking">
+
+    <button onclick="agregarProducto()">
+        Agregar Producto
+    </button>
+
+</div>
 
 </div>
 
@@ -301,7 +342,9 @@ style="display:none;">
 
         <h1>Control de Merma</h1>
 
-        <table>
+        <table id="tablaInventario">
+            
+        </table>
 
             <tr>
                 <th>Producto</th>
