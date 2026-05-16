@@ -499,8 +499,6 @@ function mostrarSeccion(id, boton){
     document.getElementById(id).style.display =
     "block";
 
-}
-
 function agregarProducto(){
 
     let producto =
