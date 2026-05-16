@@ -38,7 +38,10 @@ function guardarDatos(){
     historial.prepend(nuevoRegistro);
 
     let eficiencia =
-    Math.round((clientes / (cajas * 30)) * 100);
+Math.round(
+(clientes * 10) /
+(tiempo + cajas)
+);
 
     if(eficiencia > 100){
 
