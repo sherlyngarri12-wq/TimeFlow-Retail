@@ -20,9 +20,25 @@ function guardarDatos(){
 
     let clientes = document.getElementById("nuevosClientes").value;
 
+    let historial = document.getElementById("listaHistorial");
+
+let nuevoRegistro = document.createElement("li");
+
+nuevoRegistro.innerHTML =
+new Date().toLocaleTimeString() +
+" - Datos operativos actualizados";
+
+historial.prepend(nuevoRegistro);
+
     
     // CALCULAR EFICIENCIA AUTOMÁTICAMENTE
     let eficiencia = Math.round((clientes / (cajas * 30)) * 100);
+
+    if(eficiencia < 50){
+
+    alert("⚠ Eficiencia operativa baja detectada");
+
+}
 
     
     // ACTUALIZAR TARJETAS
@@ -65,3 +81,12 @@ const fecha = new Date();
 
 document.getElementById("fecha").innerHTML =
 fecha.toLocaleDateString();
+
+setInterval(function(){
+
+    const ahora = new Date();
+
+    document.getElementById("reloj").innerHTML =
+    ahora.toLocaleTimeString();
+
+},1000);

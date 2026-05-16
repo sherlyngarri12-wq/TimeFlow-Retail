@@ -42,6 +42,8 @@
 
             <p id="fecha"></p>
 
+<p id="reloj"></p>
+
         </div>
 
         <h1>Dashboard Operativo</h1>
@@ -94,25 +96,49 @@
 
         <div class="alertas">
 
-            <h2>Alertas</h2>
+    <h2>Alertas</h2>
 
-            <p>⚠ Caja 2 presenta saturación.</p>
+    <p>⚠ Caja 2 presenta saturación.</p>
 
-            <p>⚠ Redistribución recomendada.</p>
+    <p>⚠ Redistribución recomendada.</p>
 
-        </div>
+</div>
 
-        <button onclick="actualizar()">
-            Actualizar Datos
-        </button>
+<div class="historial">
 
-        <button onclick="reporte()">
-            Generar Reporte
-        </button>
+    <h2>Actividad en Tiempo Real</h2>
 
-        <button onclick="logout()">
-            Cerrar Sesión
-        </button>
+    <ul id="listaHistorial">
+
+        <li>Sistema iniciado correctamente</li>
+
+    </ul>
+
+</div>
+
+<div class="grafica">
+
+    <h2>Rendimiento Operativo</h2>
+
+    <div class="barra">
+
+        <div id="barraInterna"></div>
+
+    </div>
+
+    </div>
+
+<button onclick="actualizar()">
+    Actualizar Datos
+</button>
+
+<button onclick="reporte()">
+    Generar Reporte
+</button>
+
+<button onclick="logout()">
+    Cerrar Sesión
+</button>
 
         <div id="panelDatos" style="display:none; margin-top:20px;">
 
