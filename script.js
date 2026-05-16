@@ -460,7 +460,32 @@ setInterval(function(){
 
 },1000);
 
-function mostrarSeccion(id){
+function mostrarSeccion(id, boton){
+
+    let secciones =
+    document.querySelectorAll(".section");
+
+    secciones.forEach(function(sec){
+
+        sec.style.display = "none";
+
+    });
+
+    document.getElementById(id).style.display =
+    "block";
+
+    let botones =
+    document.querySelectorAll(".menu-btn");
+
+    botones.forEach(function(btn){
+
+        btn.classList.remove("active");
+
+    });
+
+    boton.classList.add("active");
+
+}
 
     let secciones =
     document.querySelectorAll(".section");

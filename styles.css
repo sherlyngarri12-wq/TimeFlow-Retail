@@ -263,3 +263,12 @@ button:hover{
     border-radius:20px;
     transition:1s;
 }
+
+.menu-btn.active{
+
+    background:#A9BCD0 !important;
+    color:#0D1321;
+    transform:scale(1.03);
+    box-shadow:0 0 15px rgba(169,188,208,0.6);
+
+}
