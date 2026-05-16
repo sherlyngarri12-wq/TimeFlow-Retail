@@ -84,12 +84,10 @@ h1{
 
 .cards{
    body{
-
     font-family: Arial, sans-serif;
-    background:#E0E1DD;
+    background:#E9ECEF;
     margin:0;
-    padding:30px;
-
+    display:flex;
 }
 }
 
@@ -279,4 +277,81 @@ body{
     display:flex;
     gap:20px;
 
+}
+
+/* MENU LATERAL */
+
+.sidebar{
+    width:240px;
+    height:100vh;
+    background:#1D2D44;
+    position:fixed;
+    left:0;
+    top:0;
+    padding:30px 20px;
+    box-shadow:5px 0 20px rgba(0,0,0,0.1);
+}
+
+.sidebar h2{
+    color:white;
+    margin-bottom:40px;
+    font-size:32px;
+}
+
+.sidebar button{
+    width:100%;
+    margin-bottom:15px;
+    background:#3E5C76;
+    border-radius:12px;
+    font-size:16px;
+}
+
+.sidebar button:hover{
+    background:#748CAB;
+}
+
+/* CONTENIDO */
+
+.dashboard{
+    margin-left:300px;
+    width:calc(100% - 340px);
+    padding:40px;
+    min-height:100vh;
+    box-sizing:border-box;
+}
+
+/* TARJETAS */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.card{
+    min-height:120px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+/* TABLAS */
+
+table{
+    margin-top:30px;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 4px 15px rgba(0,0,0,0.08);
+}
+
+/* SECCIONES */
+
+.historial,
+.grafica,
+.alertas{
+    background:white;
+    padding:25px;
+    border-radius:18px;
+    margin-top:25px;
+    box-shadow:0 5px 18px rgba(0,0,0,0.08);
 }
