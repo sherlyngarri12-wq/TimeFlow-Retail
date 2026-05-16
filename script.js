@@ -62,45 +62,77 @@ function guardarDatos(){
 
 function reporte(){
 
-    let contenido =
-`REPORTE OPERATIVO - TIMEFLOW RETAIL
+    const { jsPDF } = window.jspdf;
 
-Fecha: ${new Date().toLocaleDateString()}
-Hora: ${new Date().toLocaleTimeString()}
+    const doc = new jsPDF();
 
------------------------------------
+    doc.setFont("helvetica");
 
-Tiempo promedio:
-${document.querySelectorAll(".card h2")[0].innerText}
+    doc.setFontSize(22);
 
-Cajas activas:
-${document.querySelectorAll(".card h2")[1].innerText}
+    doc.text("Reporte Operativo", 20, 20);
 
-Clientes atendidos:
-${document.querySelectorAll(".card h2")[2].innerText}
+    doc.setFontSize(14);
 
-Eficiencia:
-${document.querySelectorAll(".card h2")[3].innerText}
+    doc.text("TimeFlow Retail", 20, 30);
 
------------------------------------
+    doc.line(20,35,190,35);
 
-Estado del sistema:
-Operativo
+    doc.text(
+    "Fecha: " + new Date().toLocaleDateString(),
+    20,
+    50
+    );
 
-Alertas detectadas:
-- Caja 2 presenta saturación
-- Redistribución recomendada
-`;
+    doc.text(
+    "Hora: " + new Date().toLocaleTimeString(),
+    20,
+    60
+    );
 
-    let archivo = new Blob([contenido], {type:"text/plain"});
+    doc.text(
+    "Tiempo promedio: " +
+    document.querySelectorAll(".card h2")[0].innerText,
+    20,
+    80
+    );
 
-    let enlace = document.createElement("a");
+    doc.text(
+    "Cajas activas: " +
+    document.querySelectorAll(".card h2")[1].innerText,
+    20,
+    90
+    );
 
-    enlace.href = URL.createObjectURL(archivo);
+    doc.text(
+    "Clientes atendidos: " +
+    document.querySelectorAll(".card h2")[2].innerText,
+    20,
+    100
+    );
 
-    enlace.download = "Reporte_TimeFlow.txt";
+    doc.text(
+    "Eficiencia: " +
+    document.querySelectorAll(".card h2")[3].innerText,
+    20,
+    110
+    );
 
-    enlace.click();
+    doc.text("Alertas:",20,130);
+
+    doc.text(
+    "- Caja 2 presenta saturacion",
+    25,
+    140
+    );
+
+    doc.text(
+    "- Redistribucion recomendada",
+    25,
+    150
+    );
+
+    doc.save("Reporte_TimeFlow.pdf");
 
 }
 
