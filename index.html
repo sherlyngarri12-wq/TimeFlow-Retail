@@ -34,7 +34,9 @@
 
     </div>
 
-    <div class="dashboard" id="dashboard" style="display:none;">
+    <div class="dashboard section"
+id="dashboardSection"
+style="display:none;">
 
         <div class="topbar">
 
@@ -162,10 +164,83 @@
 
     </div>
 
+    <div class="section"
+id="inventarioSection"
+style="display:none;">
+
+    <div class="dashboard">
+
+        <h1>Inventario</h1>
+
+        <table>
+
+            <tr>
+                <th>Producto</th>
+                <th>Stock</th>
+                <th>Picking</th>
+                <th>Estado</th>
+            </tr>
+
+            <tr>
+                <td>Coca Cola</td>
+                <td>120</td>
+                <td>15</td>
+                <td>Disponible</td>
+            </tr>
+
+            <tr>
+                <td>Sabritas</td>
+                <td>25</td>
+                <td>10</td>
+                <td style="color:red;">
+                    Bajo stock
+                </td>
+            </tr>
+
+        </table>
+
+    </div>
+
+</div>
+
+<div class="section"
+id="reportesSection"
+style="display:none;">
+
+    <div class="dashboard">
+
+        <h1>Reportes</h1>
+
+        <p>
+            Genera reportes operativos en PDF.
+        </p>
+
+    </div>
+
+</div>
+
     <script src="script.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
 </body>
+
+<div class="sidebar">
+
+    <h2>TimeFlow</h2>
+
+    <button onclick="mostrarSeccion('dashboardSection')">
+        Dashboard
+    </button>
+
+    <button onclick="mostrarSeccion('inventarioSection')">
+        Inventario
+    </button>
+
+    <button onclick="mostrarSeccion('reportesSection')">
+        Reportes
+    </button>
+
+</div>
 
 </html>

@@ -2,7 +2,7 @@ function login(){
 
     document.getElementById("loginScreen").style.display = "none";
 
-    document.getElementById("dashboard").style.display = "block";
+    document.getElementById("dashboardSection").style.display = "block";
 
 }
 
@@ -164,3 +164,18 @@ setInterval(function(){
     ahora.toLocaleTimeString();
 
 },1000);
+
+function mostrarSeccion(id){
+
+    let secciones =
+    document.querySelectorAll(".section");
+
+    secciones.forEach(function(sec){
+
+        sec.style.display = "none";
+
+    });
+
+    document.getElementById(id).style.display = "block";
+
+}

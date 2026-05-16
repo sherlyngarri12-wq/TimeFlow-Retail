@@ -180,7 +180,7 @@ button:hover{
     background:linear-gradient(90deg,#1D2D44,#748CAB);
     border-radius:25px;
     transition:1s;
-    
+
 }
 
 .historial{
@@ -230,4 +230,41 @@ button:hover{
     height: 100%;
     background: linear-gradient(90deg, #1D3557, #457B9D);
     border-radius: 20px;
+}
+
+body{
+
+    display:flex;
+    gap:20px;
+
+}
+
+.sidebar{
+
+    width:220px;
+    background:#1D2D44;
+    min-height:100vh;
+    padding:20px;
+    color:white;
+
+}
+
+.sidebar h2{
+
+    margin-bottom:30px;
+
+}
+
+.sidebar button{
+
+    width:100%;
+    margin-bottom:15px;
+    background:#3E5C76;
+
+}
+
+.section{
+
+    flex:1;
+
 }
