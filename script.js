@@ -76,8 +76,29 @@ function guardarDatos(){
     document.querySelectorAll(".card h2")[3].innerText =
     eficiencia + "%";
 
-    let rendimiento =
-(clientes * 2) - (tiempo * 3) + (cajas * 10);
+    let rendimiento = 100;
+
+/* TIEMPO */
+
+rendimiento -= tiempo * 0.8;
+
+/* CLIENTES */
+
+if(clientes > 150){
+
+    rendimiento -= 20;
+
+}else if(clientes > 100){
+
+    rendimiento -= 10;
+
+}
+
+/* CAJAS */
+
+rendimiento += cajas * 5;
+
+/* LIMITES */
 
 if(rendimiento > 100){
 
@@ -93,12 +114,6 @@ if(rendimiento < 10){
 
 document.getElementById("barraInterna").style.width =
 rendimiento + "%";
-
-document.getElementById("barraInterna").style.width =
-rendimiento + "%";
-
-document.getElementById("barraEfectividad").style.width =
-eficiencia + "%";
 
 document.getElementById(
 "rendimientoCajas"
