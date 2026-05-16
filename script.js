@@ -94,6 +94,38 @@ if(rendimiento < 10){
 document.getElementById("barraInterna").style.width =
 rendimiento + "%";
 
+document.getElementById("barraInterna").style.width =
+rendimiento + "%";
+
+document.getElementById("barraEfectividad").style.width =
+eficiencia + "%";
+
+document.getElementById("eficienciaActual").innerText =
+eficiencia + "%";
+
+document.getElementById("ordenesHora").innerText =
+clientes;
+
+document.getElementById("tiempoRespuesta").innerText =
+tiempo + " min";
+
+if(eficiencia >= 85){
+
+    document.getElementById("estadoOperacion").innerText =
+    "Operación estable y eficiente";
+
+}else if(eficiencia >= 60){
+
+    document.getElementById("estadoOperacion").innerText =
+    "Operación moderada con carga media";
+
+}else{
+
+    document.getElementById("estadoOperacion").innerText =
+    "⚠ Riesgo operativo detectado";
+
+}
+
 document.getElementById(
 "ordenesCompletadas"
 ).innerText = clientes;
