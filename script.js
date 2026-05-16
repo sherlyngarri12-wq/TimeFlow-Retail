@@ -487,18 +487,6 @@ function mostrarSeccion(id, boton){
 
 }
 
-    let secciones =
-    document.querySelectorAll(".section");
-
-    secciones.forEach(function(sec){
-
-        sec.style.display = "none";
-
-    });
-
-    document.getElementById(id).style.display =
-    "block";
-
 function agregarProducto(){
 
     let producto =
