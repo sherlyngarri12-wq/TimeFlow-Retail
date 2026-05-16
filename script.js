@@ -209,7 +209,7 @@ clientes;
 document.getElementById("tiempoRespuesta").innerText =
 tiempo + " min";
 
-let merma = 8;
+let mermaBase = 8;
 
 let devoluciones = 5;
 
@@ -219,7 +219,7 @@ let jornadasLargas = 1;
 
 /* MERMA */
 
-if(merma >= 5){
+if(mermaBase >= 5){
 
     eficiencia -= 5;
 
