@@ -291,6 +291,34 @@ document.getElementById(
 ).innerText =
 Math.round(clientes * 0.3);
 
+let estadoManana = "Flujo normal";
+
+let estadoPico = "Hora pico";
+
+if(clientes < 50){
+
+    estadoManana = "Bajo flujo";
+
+    estadoPico = "Flujo moderado";
+
+}
+
+if(clientes > 150){
+
+    estadoPico = "Saturación crítica";
+
+}
+
+document.querySelectorAll(
+"#indicadoresSection table tr td:nth-child(3)"
+)[0].innerText =
+estadoManana;
+
+document.querySelectorAll(
+"#indicadoresSection table tr td:nth-child(3)"
+)[1].innerText =
+estadoPico;
+
 document.getElementById(
 "ordenesPendientes"
 ).innerText =
