@@ -342,6 +342,116 @@ document.getElementById(
 ).style.width =
 eficiencia + "%";
 
+/* ===== MERMA DINAMICA ===== */
+
+let merma = 0;
+
+/* TIEMPOS ALTOS */
+
+if(tiempo > 120){
+
+    merma += 15;
+
+}else if(tiempo > 60){
+
+    merma += 8;
+
+}
+
+/* MUCHAS CAJAS */
+
+if(cajas > 15){
+
+    merma += 10;
+
+}
+
+/* SATURACION */
+
+if(clientes < cajas){
+
+    merma += 12;
+
+}
+
+/* LIMITE */
+
+if(merma > 100){
+
+    merma = 100;
+
+}
+
+/* ACTUALIZAR MERMA */
+
+document.getElementById(
+"porcentajeMerma"
+).innerText =
+merma + "%";
+
+document.getElementById(
+"productosPerdidos"
+).innerText =
+Math.round(merma / 2);
+
+document.getElementById(
+"impactoFinanciero"
+).innerText =
+"$" + (merma * 250);
+
+document.getElementById(
+"barraMerma"
+).style.width =
+merma + "%";
+
+/* RIESGOS */
+
+if(merma >= 20){
+
+    document.getElementById(
+    "riesgoAlmacen"
+    ).innerText =
+    "Alto";
+
+    document.getElementById(
+    "estadoAlmacen"
+    ).innerText =
+    "Riesgo operativo";
+
+    document.getElementById(
+    "riesgoDistribucion"
+    ).innerText =
+    "Alto";
+
+    document.getElementById(
+    "estadoDistribucionMerma"
+    ).innerText =
+    "Pérdidas detectadas";
+
+}else{
+
+    document.getElementById(
+    "riesgoAlmacen"
+    ).innerText =
+    "Bajo";
+
+    document.getElementById(
+    "estadoAlmacen"
+    ).innerText =
+    "Estable";
+
+    document.getElementById(
+    "riesgoDistribucion"
+    ).innerText =
+    "Bajo";
+
+    document.getElementById(
+    "estadoDistribucionMerma"
+    ).innerText =
+    "Normal";
+
+}
+
 if(eficiencia < 50){
 
     document.getElementById(
