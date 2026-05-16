@@ -3,7 +3,7 @@ function login(){
 
     document.getElementById("loginScreen").style.display = "none";
 
-    document.getElementById("dashboard").style.display = "block";
+    document.getElementById("dashboardSection").style.display = "block";
 
     document.getElementById("sidebar").style.display = "block";
 

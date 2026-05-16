@@ -1,8 +1,7 @@
 body{
-    font-family: Arial, sans-serif;
-    background:#E0E1DD;
+    font-family:Arial,sans-serif;
+    background:#E9ECEF;
     margin:0;
-    padding:30px;
 }
 
 /* LOGIN */
@@ -40,248 +39,14 @@ body{
     border:1px solid #ccc;
     border-radius:10px;
     font-size:16px;
+    box-sizing:border-box;
 }
 
 .login-box button{
     width:100%;
 }
 
-/* DASHBOARD */
-
-.dashboard{
-    background:white;
-    padding:30px;
-    border-radius:20px;
-    box-shadow:0 8px 25px rgba(0,0,0,0.08);
-}
-
-.topbar{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin-bottom:30px;
-    padding:20px;
-    border-left:8px solid #3E5C76;
-    background:#F8F9FA;
-    border-radius:10px;
-}
-
-.topbar h2{
-    color:#1D2D44;
-}
-
-#fecha{
-    color:#555;
-    font-weight:bold;
-}
-
-h1{
-    color:#0D1321;
-    margin-bottom:30px;
-}
-
-/* CARDS */
-
-.cards{
-   body{
-    font-family: Arial, sans-serif;
-    background:#E9ECEF;
-    margin:0;
-    display:flex;
-}
-}
-
-.card
-    .card{
-    background:linear-gradient(135deg, #1D2D44, #3E5C76);
-    color:white;
-    padding:25px;
-    border-radius:18px;
-    box-shadow:0 8px 20px rgba(0,0,0,0.12);
-    transition:0.3s;
-
-    min-width:0;
-}
-
-.card:hover{
-    transform:translateY(-5px);
-}
-
-/* TABLA */
-
-table{
-    width:100%;
-    border-collapse:collapse;
-    margin-top:20px;
-    background:white;
-}
-
-th{
-    background:#1D2D44;
-    color:white;
-}
-
-th,
-td{
-    border:1px solid #dcdcdc;
-    padding:12px;
-}
-
-/* BOTONES */
-
-button{
-    margin-top:20px;
-    margin-right:10px;
-    padding:12px 22px;
-    border:none;
-    border-radius:10px;
-    background:#1D2D44;
-    color:white;
-    cursor:pointer;
-    font-weight:bold;
-    transition:0.3s;
-}
-
-button:hover{
-    background:#3E5C76;
-}
-
-.historial{
-    margin-top:30px;
-    background:#F8F9FA;
-    padding:20px;
-    border-radius:15px;
-}
-
-.historial ul{
-    list-style:none;
-    padding:0;
-}
-
-.historial li{
-    padding:10px;
-    border-bottom:1px solid #ccc;
-}
-
-.grafica{
-    margin-top:30px;
-    background:#F8F9FA;
-    padding:20px;
-    border-radius:15px;
-}
-
-.barra{
-    width:100%;
-    height:30px;
-    background:#ccc;
-    border-radius:20px;
-    overflow:hidden;
-}
-
-#barraInterna{
-
-    width:0%;
-    height:100%;
-    background:linear-gradient(90deg,#1D2D44,#748CAB);
-    border-radius:25px;
-    transition:1s;
-
-}
-
-.historial{
-    margin-top: 30px;
-    background: white;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
-}
-
-.historial h2{
-    margin-bottom: 15px;
-}
-
-.historial ul{
-    list-style: none;
-    padding: 0;
-}
-
-.historial li{
-    padding: 10px;
-    border-bottom: 1px solid #ccc;
-}
-
-.grafica{
-    margin-top: 30px;
-    background: white;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
-}
-
-.grafica h2{
-    margin-bottom: 15px;
-}
-
-.barra{
-    width: 100%;
-    height: 35px;
-    background: #D9D9D9;
-    border-radius: 20px;
-    overflow: hidden;
-}
-
-#barraInterna{
-    width: 92%;
-    height: 100%;
-    background: linear-gradient(90deg, #1D3557, #457B9D);
-    border-radius: 20px;
-}
-
-body{
-
-    display:flex;
-    gap:20px;
-
-}
-
-.sidebar{
-
-    width:220px;
-    background:#1D2D44;
-    min-height:100vh;
-    padding:20px;
-    color:white;
-
-}
-
-.sidebar h2{
-
-    margin-bottom:30px;
-
-}
-
-.sidebar button{
-
-    width:100%;
-    margin-bottom:15px;
-    background:#3E5C76;
-
-}
-
-.section{
-
-    flex:1;
-
-}
-
-.main-container{
-
-    display:flex;
-    gap:20px;
-
-}
-
-/* MENU LATERAL */
+/* MENU */
 
 .sidebar{
     width:240px;
@@ -291,6 +56,7 @@ body{
     left:0;
     top:0;
     padding:30px 20px;
+    box-sizing:border-box;
     box-shadow:5px 0 20px rgba(0,0,0,0.1);
 }
 
@@ -312,20 +78,54 @@ body{
     background:#748CAB;
 }
 
-/* CONTENIDO */
+/* SECCIONES */
 
-.dashboard{
-    margin-left:300px;
-    width:calc(100% - 340px);
-    padding:40px;
-    min-height:100vh;
-    box-sizing:border-box;
+.section{
+    margin-left:280px;
+    padding:30px;
+    display:none;
 }
 
-/* TARJETAS */
+.dashboard{
+    background:white;
+    padding:40px;
+    border-radius:25px;
+    box-shadow:0 8px 25px rgba(0,0,0,0.08);
+}
+
+/* TOPBAR */
+
+.topbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+    padding:20px;
+    border-left:8px solid #3E5C76;
+    background:#F8F9FA;
+    border-radius:10px;
+}
+
+.topbar h2{
+    color:#1D2D44;
+}
+
+#fecha,
+#reloj{
+    color:#555;
+    font-weight:bold;
+}
+
+/* TITULOS */
+
+h1{
+    color:#0D1321;
+    margin-bottom:30px;
+}
+
+/* CARDS */
 
 .cards{
-
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
     gap:20px;
@@ -333,22 +133,65 @@ body{
 }
 
 .card{
+    background:linear-gradient(135deg,#1D2D44,#3E5C76);
+    color:white;
+    padding:25px;
+    border-radius:18px;
     min-height:120px;
     display:flex;
     flex-direction:column;
     justify-content:center;
+    box-shadow:0 8px 20px rgba(0,0,0,0.12);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
 }
 
 /* TABLAS */
 
 table{
+    width:100%;
+    border-collapse:collapse;
     margin-top:30px;
+    background:white;
     border-radius:15px;
     overflow:hidden;
     box-shadow:0 4px 15px rgba(0,0,0,0.08);
 }
 
-/* SECCIONES */
+th{
+    background:#1D2D44;
+    color:white;
+}
+
+th,
+td{
+    border:1px solid #dcdcdc;
+    padding:15px;
+}
+
+/* BOTONES */
+
+button{
+    margin-top:20px;
+    margin-right:10px;
+    padding:12px 22px;
+    border:none;
+    border-radius:10px;
+    background:#1D2D44;
+    color:white;
+    cursor:pointer;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#3E5C76;
+}
+
+/* CAJAS */
 
 .historial,
 .grafica,
@@ -358,4 +201,34 @@ table{
     border-radius:18px;
     margin-top:25px;
     box-shadow:0 5px 18px rgba(0,0,0,0.08);
+}
+
+/* HISTORIAL */
+
+.historial ul{
+    list-style:none;
+    padding:0;
+}
+
+.historial li{
+    padding:10px;
+    border-bottom:1px solid #ccc;
+}
+
+/* GRAFICA */
+
+.barra{
+    width:100%;
+    height:35px;
+    background:#D9D9D9;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+#barraInterna{
+    width:92%;
+    height:100%;
+    background:linear-gradient(90deg,#1D3557,#457B9D);
+    border-radius:20px;
+    transition:1s;
 }
