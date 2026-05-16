@@ -342,25 +342,11 @@ document.getElementById(
 ).style.width =
 eficiencia + "%";
 
-/* ===== MERMA DINAMICA ===== */
-
 let merma = 0;
 
-/* TIEMPOS ALTOS */
+/* STOCK BAJO */
 
-if(tiempo > 120){
-
-    merma += 15;
-
-}else if(tiempo > 60){
-
-    merma += 8;
-
-}
-
-/* MUCHAS CAJAS */
-
-if(cajas > 15){
+if(stock < 30){
 
     merma += 10;
 
@@ -368,17 +354,9 @@ if(cajas > 15){
 
 /* SATURACION */
 
-if(clientes < cajas){
+if(capacidad >= 80){
 
-    merma += 12;
-
-}
-
-/* LIMITE */
-
-if(merma > 100){
-
-    merma = 100;
+    merma += 15;
 
 }
 
