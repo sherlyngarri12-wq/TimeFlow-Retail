@@ -236,3 +236,42 @@ button:hover{
 .sidebar{
     display:none;
 }
+
+/* MENU LATERAL */
+
+.sidebar{
+    width:240px;
+    height:100vh;
+    background:#1D2D44;
+    position:fixed;
+    left:0;
+    top:0;
+    padding:30px 20px;
+    box-sizing:border-box;
+    box-shadow:5px 0 20px rgba(0,0,0,0.1);
+}
+
+.sidebar h2{
+    color:white;
+    margin-bottom:40px;
+    font-size:32px;
+}
+
+.sidebar button{
+    width:100%;
+    margin-bottom:15px;
+    background:#3E5C76;
+    border-radius:12px;
+    font-size:16px;
+}
+
+.sidebar button:hover{
+    background:#748CAB;
+}
+
+/* SECCIONES */
+
+.section{
+    margin-left:280px;
+    padding:30px;
+}
