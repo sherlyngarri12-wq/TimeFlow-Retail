@@ -49,8 +49,8 @@ body{
 /* MENU */
 
 .sidebar{
-    width:240px;
-    height:100vh;
+    height:100%;
+    overflow-y:auto;
     background:#1D2D44;
     position:fixed;
     left:0;
