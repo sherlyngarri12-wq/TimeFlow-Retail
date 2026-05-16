@@ -612,6 +612,42 @@ if(capacidad >= 90){
 
 let merma = 0;
 
+/* TIEMPO ALTO */
+
+if(tiempo > 120){
+
+    merma += 15;
+
+}else if(tiempo > 60){
+
+    merma += 8;
+
+}
+
+/* MUCHAS CAJAS */
+
+if(cajas > 15){
+
+    merma += 10;
+
+}
+
+/* SATURACION */
+
+if(clientes < cajas){
+
+    merma += 12;
+
+}
+
+/* LIMITE */
+
+if(merma > 100){
+
+    merma = 100;
+
+}
+
 /* STOCK BAJO */
 
 if(stock < 30){
@@ -649,6 +685,32 @@ document.getElementById(
 "barraMerma"
 ).style.width =
 merma + "%";
+
+if(merma >= 20){
+
+    document.getElementById(
+    "riesgoDistribucion"
+    ).innerText =
+    "Alto";
+
+    document.getElementById(
+    "estadoDistribucionMerma"
+    ).innerText =
+    "Pérdidas detectadas";
+
+}else{
+
+    document.getElementById(
+    "riesgoDistribucion"
+    ).innerText =
+    "Bajo";
+
+    document.getElementById(
+    "estadoDistribucionMerma"
+    ).innerText =
+    "Normal";
+
+}
 
 /* ALERTAS */
 
