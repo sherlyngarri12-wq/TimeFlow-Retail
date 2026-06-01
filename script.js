@@ -645,12 +645,23 @@ function agregarProducto(){
 
     let estado = "Disponible";
 
-    if(stock < 30){
+/* STOCK INSUFICIENTE */
 
-        estado =
-        "<span style='color:red;'>Bajo stock</span>";
+if(Number(picking) > Number(stock)){
 
-    }
+    estado =
+    "<span style='color:red;'>No disponible</span>";
+
+}
+
+/* STOCK BAJO */
+
+else if(Number(stock) < 30){
+
+    estado =
+    "<span style='color:orange;'>Bajo stock</span>";
+
+}
 
     let tabla =
     document.getElementById("tablaInventario");
