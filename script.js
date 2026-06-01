@@ -943,6 +943,11 @@ function registrarDevolucion(){
     "cantidadDevolucion"
     ).value;
 
+    let motivo =
+document.getElementById(
+"motivoDevolucion"
+).value;
+
     if(producto === "" || cantidad === ""){
 
         alert(
@@ -963,8 +968,9 @@ function registrarDevolucion(){
 
     fila.innerHTML =
 
-    "<td>" + producto + "</td>" +
-    "<td>" + cantidad + "</td>";
+"<td>" + producto + "</td>" +
+"<td>" + cantidad + "</td>" +
+"<td>" + motivo + "</td>";
 
     tabla.appendChild(fila);
 
