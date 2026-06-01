@@ -558,6 +558,24 @@ function reporte(){
 
     doc.save("Reporte_TimeFlow.pdf");
 
+    let historial =
+document.getElementById(
+"historialReportes"
+);
+
+let nuevoReporte =
+document.createElement("p");
+
+nuevoReporte.innerText =
+
+"Reporte generado: " +
+
+new Date().toLocaleString();
+
+historial.prepend(
+nuevoReporte
+);
+
 }
 
 function logout(){
