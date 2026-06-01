@@ -16,18 +16,6 @@ function login(){
    DATOS GLOBALES DEL SISTEMA
 ========================= */
 
-let tiempoGlobal = 0;
-let cajasGlobal = 0;
-let clientesGlobal = 0;
-
-let eficienciaGlobal = 0;
-
-let capacidadGlobal = 0;
-
-let mermaGlobal = 0;
-
-let stockBajoGlobal = 0;
-
     document.getElementById("loginScreen").style.display = "none";
 
     document.getElementById("dashboardSection").style.display = "block";
@@ -667,15 +655,15 @@ else if(Number(stock) < 30){
     document.getElementById("tablaInventario");
 
     let nuevaFila =
-    document.createElement("tr");
+document.createElement("tr");
 
-    fila.innerHTML =
-    "<td>" + producto + "</td>" +
-    "<td>" + stock + "</td>" +
-    "<td>" + picking + "</td>" +
-    "<td>" + estado + "</td>";
+nuevaFila.innerHTML =
+"<td>" + producto + "</td>" +
+"<td>" + stock + "</td>" +
+"<td>" + picking + "</td>" +
+"<td>" + estado + "</td>";
 
-    tabla.appendChild(nuevaFila);
+tabla.appendChild(nuevaFila);
 
     let total =
     document.querySelectorAll(
