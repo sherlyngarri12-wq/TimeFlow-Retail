@@ -970,3 +970,47 @@ document.getElementById(
     );
 
 }
+
+function registrarProveedor(){
+
+    let proveedor =
+    document.getElementById(
+    "nombreProveedor"
+    ).value;
+
+    let incidencia =
+    document.getElementById(
+    "incidenciaProveedor"
+    ).value;
+
+    if(proveedor === "" ||
+       incidencia === ""){
+
+        alert(
+        "Completa todos los campos"
+        );
+
+        return;
+
+    }
+
+    let tabla =
+    document.getElementById(
+    "tablaProveedores"
+    );
+
+    let fila =
+    document.createElement("tr");
+
+    fila.innerHTML =
+
+    "<td>" + proveedor + "</td>" +
+    "<td>" + incidencia + "</td>";
+
+    tabla.appendChild(fila);
+
+    alert(
+    "Proveedor registrado"
+    );
+
+}
