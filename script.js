@@ -930,3 +930,46 @@ if(merma >= 15){
     alert("Producto agregado correctamente");
 
 }
+
+function registrarDevolucion(){
+
+    let producto =
+    document.getElementById(
+    "productoDevolucion"
+    ).value;
+
+    let cantidad =
+    document.getElementById(
+    "cantidadDevolucion"
+    ).value;
+
+    if(producto === "" || cantidad === ""){
+
+        alert(
+        "Completa todos los campos"
+        );
+
+        return;
+
+    }
+
+    let tabla =
+    document.getElementById(
+    "tablaDevoluciones"
+    );
+
+    let fila =
+    document.createElement("tr");
+
+    fila.innerHTML =
+
+    "<td>" + producto + "</td>" +
+    "<td>" + cantidad + "</td>";
+
+    tabla.appendChild(fila);
+
+    alert(
+    "Devolución registrada"
+    );
+
+}
