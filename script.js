@@ -488,17 +488,30 @@ function reporte(){
 
     const doc = new jsPDF();
 
-    doc.setFont("helvetica");
+    doc.setFont("helvetica","bold");
 
-    doc.setFontSize(22);
+doc.setFontSize(24);
 
-    doc.text("Reporte Operativo",20,20);
+doc.text(
+"TIMEFLOW RETAIL",
+20,
+20
+);
 
-    doc.setFontSize(14);
+doc.setFontSize(16);
 
-    doc.text("TimeFlow Retail",20,30);
+doc.text(
+"Reporte Ejecutivo Operativo",
+20,
+30
+);
 
-    doc.line(20,35,190,35);
+doc.line(
+20,
+35,
+190,
+35
+);
 
     doc.text(
     "Fecha: " +
@@ -514,47 +527,82 @@ function reporte(){
     60
     );
 
+    doc.setFontSize(18);
+
+doc.text(
+"RESUMEN GENERAL",
+20,
+75
+);
+
     doc.text(
     "Tiempo promedio: " +
     document.querySelectorAll(".card h2")[0].innerText,
     20,
-    80
+    90
     );
 
     doc.text(
     "Cajas activas: " +
     document.querySelectorAll(".card h2")[1].innerText,
     20,
-    90
+    100
     );
 
     doc.text(
     "Clientes atendidos: " +
     document.querySelectorAll(".card h2")[2].innerText,
     20,
-    100
+    110
     );
 
     doc.text(
     "Eficiencia: " +
     document.querySelectorAll(".card h2")[3].innerText,
     20,
-    110
+    120
     );
 
-    doc.text("Alertas:",20,130);
+    doc.setFontSize(18);
+
+doc.text(
+"ALERTAS OPERATIVAS",
+20,
+145
+);
 
     doc.text(
     "- Caja 2 presenta saturacion",
     25,
-    140
+    155
     );
 
     doc.text(
     "- Redistribucion recomendada",
     25,
-    150
+    165
     );
+
+    doc.setFontSize(18);
+
+doc.text(
+"CONCLUSION",
+20,
+185
+);
+
+doc.setFontSize(12);
+
+doc.text(
+"El sistema presenta una eficiencia operativa de " +
+document.querySelectorAll(".card h2")[3].innerText +
+". Se recomienda mantener el monitoreo continuo para mejorar el rendimiento y reducir incidencias operativas.",
+20,
+200,
+{
+maxWidth:170
+}
+);
 
     doc.save("Reporte_TimeFlow.pdf");
 
