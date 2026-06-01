@@ -683,23 +683,30 @@ style="display:none;">
                 <th>Horas</th>
             </tr>
 
-            <tr>
-                <td>Juan</td>
-                <td>08:00</td>
-                <td>16:00</td>
-                <td>8 hrs</td>
-            </tr>
+            <tbody id="tablaJornadas">
 
-            <tr>
-                <td>María</td>
-                <td>07:00</td>
-                <td>17:30</td>
-                <td style="color:red;">
-                    10.5 hrs
-                </td>
-            </tr>
+</tbody>
 
         </table>
+
+        <h2>Registrar Jornada</h2>
+
+<input
+type="text"
+id="empleadoJornada"
+placeholder="Empleado">
+
+<input
+type="time"
+id="entradaJornada">
+
+<input
+type="time"
+id="salidaJornada">
+
+<button onclick="registrarJornada()">
+    Registrar Jornada
+</button>
 
     </div>
 

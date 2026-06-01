@@ -1014,3 +1014,66 @@ function registrarProveedor(){
     );
 
 }
+
+function registrarJornada(){
+
+    let empleado =
+    document.getElementById(
+    "empleadoJornada"
+    ).value;
+
+    let entrada =
+    document.getElementById(
+    "entradaJornada"
+    ).value;
+
+    let salida =
+    document.getElementById(
+    "salidaJornada"
+    ).value;
+
+    if(
+        empleado === "" ||
+        entrada === "" ||
+        salida === ""
+    ){
+
+        alert(
+        "Completa todos los campos"
+        );
+
+        return;
+
+    }
+
+    let horaEntrada =
+    Number(entrada.split(":")[0]);
+
+    let horaSalida =
+    Number(salida.split(":")[0]);
+
+    let horas =
+    horaSalida - horaEntrada;
+
+    let tabla =
+    document.getElementById(
+    "tablaJornadas"
+    );
+
+    let fila =
+    document.createElement("tr");
+
+    fila.innerHTML =
+
+    "<td>" + empleado + "</td>" +
+    "<td>" + entrada + "</td>" +
+    "<td>" + salida + "</td>" +
+    "<td>" + horas + " hrs</td>";
+
+    tabla.appendChild(fila);
+
+    alert(
+    "Jornada registrada"
+    );
+
+}
