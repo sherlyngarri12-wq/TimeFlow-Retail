@@ -1,5 +1,21 @@
 function login(){
 
+    /* =========================
+   DATOS GLOBALES DEL SISTEMA
+========================= */
+
+let tiempoGlobal = 0;
+let cajasGlobal = 0;
+let clientesGlobal = 0;
+
+let eficienciaGlobal = 0;
+
+let capacidadGlobal = 0;
+
+let mermaGlobal = 0;
+
+let stockBajoGlobal = 0;
+
     document.getElementById("loginScreen").style.display = "none";
 
     document.getElementById("dashboardSection").style.display = "block";
@@ -24,6 +40,12 @@ function guardarDatos(){
 
     let clientes =
     document.getElementById("nuevosClientes").value;
+
+    tiempoGlobal = Number(tiempo);
+
+cajasGlobal = Number(cajas);
+
+clientesGlobal = Number(clientes);
 
     let historial =
     document.getElementById("listaHistorial");
@@ -109,6 +131,8 @@ for(let i = 1; i <= cajas; i++){
 
     document.querySelectorAll(".card h2")[3].innerText =
     eficiencia + "%";
+
+    eficienciaGlobal = eficiencia;
 
     let rendimiento = 100;
 
@@ -688,6 +712,37 @@ document.getElementById(
 "barraEfectividad"
 ).style.width =
 eficienciaActual + "%";
+
+/* =========================
+   CONEXION INVENTARIO
+   → INDICADORES
+========================= */
+
+document.getElementById(
+"alcanceOperativo"
+).innerText =
+eficienciaActual + "%";
+
+document.getElementById(
+"barraIndicadores"
+).style.width =
+eficienciaActual + "%";
+
+if(productosRiesgo >= 3){
+
+    document.getElementById(
+    "textoIndicador"
+    ).innerText =
+    "Inventario con riesgo operativo";
+
+}else{
+
+    document.getElementById(
+    "textoIndicador"
+    ).innerText =
+    "Operación estable y eficiente";
+
+}
 
 if(capacidad >= 90){
 
