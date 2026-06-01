@@ -32,14 +32,17 @@ function actualizar(){
 
 function guardarDatos(){
 
-    let tiempo =
-    document.getElementById("nuevoTiempo").value;
+    let tiempo = Number(
+document.getElementById("nuevoTiempo").value
+);
 
-    let cajas =
-    document.getElementById("nuevasCajas").value;
+let cajas = Number(
+document.getElementById("nuevasCajas").value
+);
 
-    let clientes =
-    document.getElementById("nuevosClientes").value;
+let clientes = Number(
+document.getElementById("nuevosClientes").value
+);
 
     tiempoGlobal = Number(tiempo);
 
