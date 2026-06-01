@@ -1,3 +1,15 @@
+let tiempoGlobal = 0;
+let cajasGlobal = 0;
+let clientesGlobal = 0;
+
+let eficienciaGlobal = 0;
+
+let capacidadGlobal = 0;
+
+let mermaGlobal = 0;
+
+let stockBajoGlobal = 0;
+
 function login(){
 
     /* =========================
@@ -757,11 +769,11 @@ let merma = 0;
 
 /* TIEMPO ALTO */
 
-if(tiempo > 120){
+if(tiempoGlobal > 120){
 
     merma += 15;
 
-}else if(tiempo > 60){
+}else if(tiempoGlobal > 60){
 
     merma += 8;
 
@@ -769,7 +781,7 @@ if(tiempo > 120){
 
 /* MUCHAS CAJAS */
 
-if(cajas > 15){
+if(cajasGlobal > 15){
 
     merma += 10;
 
@@ -777,7 +789,7 @@ if(cajas > 15){
 
 /* SATURACION */
 
-if(clientes < cajas){
+if(clientesGlobal < cajasGlobal){
 
     merma += 12;
 
