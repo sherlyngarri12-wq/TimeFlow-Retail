@@ -669,7 +669,7 @@ else if(Number(stock) < 30){
     let nuevaFila =
     document.createElement("tr");
 
-    nuevaFila.innerHTML =
+    fila.innerHTML =
     "<td>" + producto + "</td>" +
     "<td>" + stock + "</td>" +
     "<td>" + picking + "</td>" +
