@@ -330,21 +330,42 @@ document.getElementById(
 ).innerText =
 Math.round(clientes * 0.3);
 
-let estadoManana = "Flujo normal";
+let estadoManana = "";
+let estadoPico = "";
 
-let estadoPico = "Hora pico";
+/* HORARIO MAÑANA */
 
 if(clientes < 50){
 
     estadoManana = "Bajo flujo";
 
-    estadoPico = "Flujo moderado";
+}else if(tiempo > 10){
+
+    estadoManana = "Demora operativa";
+
+}else{
+
+    estadoManana = "Flujo estable";
 
 }
 
-if(clientes > 150){
+/* HORARIO PICO */
+
+if(clientes > 150 && cajas < 5){
 
     estadoPico = "Saturación crítica";
+
+}else if(clientes > 150 && cajas >= 5){
+
+    estadoPico = "Alta demanda controlada";
+
+}else if(eficiencia < 60){
+
+    estadoPico = "Rendimiento bajo";
+
+}else{
+
+    estadoPico = "Operación normal";
 
 }
 
