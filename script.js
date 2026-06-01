@@ -392,22 +392,6 @@ eficiencia + "%";
 
 let merma = 0;
 
-/* STOCK BAJO */
-
-if(stock < 30){
-
-    merma += 10;
-
-}
-
-/* SATURACION */
-
-if(capacidad >= 80){
-
-    merma += 15;
-
-}
-
 /* ACTUALIZAR MERMA */
 
 document.getElementById(
