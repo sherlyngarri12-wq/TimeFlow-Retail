@@ -272,3 +272,109 @@ button:hover{
     box-shadow:0 0 15px rgba(169,188,208,0.6);
 
 }
+
+.mapa-almacen{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(5,1fr);
+
+    gap:15px;
+
+    margin-top:30px;
+
+}
+
+.ubicacion{
+
+    background:#4f4f4f;
+
+    color:white;
+
+    height:140px;
+
+    border:4px dashed #d9d9d9;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:24px;
+
+    font-weight:bold;
+
+    border-radius:10px;
+
+    transition:0.3s;
+
+}
+
+.ubicacion:hover{
+
+    transform:scale(1.05);
+
+}
+
+.zona-almacen{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-top:30px;
+
+}
+
+.oficinas,
+.entrada{
+
+    background:white;
+
+    padding:20px;
+
+    width:180px;
+
+    text-align:center;
+
+    border-radius:10px;
+
+    font-weight:bold;
+
+}
+
+.patio{
+
+    background:#8a8a8a;
+
+    color:white;
+
+    padding:20px;
+
+    width:450px;
+
+    text-align:center;
+
+    border-radius:10px;
+
+    font-weight:bold;
+
+}
+
+.rutas{
+
+    background:white;
+
+    margin-top:20px;
+
+    padding:20px;
+
+    text-align:center;
+
+    font-weight:bold;
+
+    border-radius:10px;
+
+}
