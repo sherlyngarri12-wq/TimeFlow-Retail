@@ -329,7 +329,9 @@ button:hover{
 }
 
 .oficinas,
-.entrada{
+.entrada,
+.recepcion,
+.despacho
 
     background:white;
 
@@ -402,5 +404,44 @@ button:hover{
     border-radius:10px;
 
     width:250px;
+
+}
+
+.recepcion,
+.despacho{
+
+    background:white;
+
+    border:3px solid #1D2D44;
+
+    padding:20px;
+
+    width:220px;
+
+    text-align:center;
+
+    border-radius:12px;
+
+    box-shadow:0 4px 10px rgba(0,0,0,0.15);
+
+}
+
+.rutas{
+
+    margin-top:25px;
+
+    background:white;
+
+    border:3px solid #1D2D44;
+
+    border-radius:15px;
+
+    padding:25px;
+
+    text-align:center;
+
+    font-weight:bold;
+
+    box-shadow:0 4px 12px rgba(0,0,0,0.15);
 
 }
