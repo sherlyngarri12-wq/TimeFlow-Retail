@@ -378,3 +378,29 @@ button:hover{
     border-radius:10px;
 
 }
+
+.panel-posiciones{
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:15px;
+
+    margin-bottom:25px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+
+}
+
+.panel-posiciones input{
+
+    padding:12px;
+
+    border:1px solid #ccc;
+
+    border-radius:10px;
+
+    width:250px;
+
+}

@@ -1127,3 +1127,50 @@ function registrarJornada(){
     );
 
 }
+
+function agregarPosicion(){
+
+    let posicion =
+
+    document.getElementById(
+    "nuevaPosicion"
+    ).value;
+
+    if(posicion === ""){
+
+        alert(
+        "Ingresa una posición"
+        );
+
+        return;
+
+    }
+
+    let mapa =
+
+    document.getElementById(
+    "mapaAlmacen"
+    );
+
+    let nuevaUbicacion =
+
+    document.createElement("div");
+
+    nuevaUbicacion.className =
+    "ubicacion";
+
+    nuevaUbicacion.id =
+    posicion;
+
+    nuevaUbicacion.innerText =
+    posicion;
+
+    mapa.appendChild(
+    nuevaUbicacion
+    );
+
+    document.getElementById(
+    "nuevaPosicion"
+    ).value = "";
+
+}

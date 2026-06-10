@@ -752,9 +752,25 @@ style="display:none;">
 
         <h1>Gestión de Almacén</h1>
 
+        <div class="panel-posiciones">
+
+    <h2>Administrar Posiciones</h2>
+
+    <input
+    type="text"
+    id="nuevaPosicion"
+    placeholder="Ejemplo: F1">
+
+    <button onclick="agregarPosicion()">
+        Agregar Posición
+    </button>
+
+</div>
+
         <h2>Mapa Visual</h2>
 
-        <div class="mapa-almacen">
+        <div class="mapa-almacen"
+id="mapaAlmacen">
 
             <div class="ubicacion" id="A1">A1</div>
             <div class="ubicacion" id="A2">A2</div>
