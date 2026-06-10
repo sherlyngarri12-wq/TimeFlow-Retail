@@ -333,17 +333,21 @@ button:hover{
 .recepcion,
 .despacho
 
-    background:white;
+    border:3px solid #1D2D44;
 
-    padding:20px;
+background:white;
 
-    width:180px;
+height:120px;
 
-    text-align:center;
+display:flex;
 
-    border-radius:10px;
+flex-direction:column;
 
-    font-weight:bold;
+justify-content:center;
+
+align-items:center;
+
+box-shadow:0 4px 10px rgba(0,0,0,0.15);
 
 }
 
@@ -353,18 +357,25 @@ button:hover{
 
     color:white;
 
-    padding:20px;
-
     width:450px;
 
-    text-align:center;
+    height:120px;
 
-    border-radius:10px;
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:15px;
 
     font-weight:bold;
 
-}
+    box-shadow:0 5px 15px rgba(0,0,0,0.15);
 
+}
 .rutas{
 
     background:white;
@@ -416,7 +427,8 @@ button:hover{
 
     padding:20px;
 
-    width:220px;
+    width:280px;
+height:120px;
 
     text-align:center;
 
@@ -443,5 +455,25 @@ button:hover{
     font-weight:bold;
 
     box-shadow:0 4px 12px rgba(0,0,0,0.15);
+
+}
+
+.entrada-camiones{
+
+    margin-top:20px;
+
+    background:#1D2D44;
+
+    color:white;
+
+    padding:20px;
+
+    text-align:center;
+
+    border-radius:15px;
+
+    font-weight:bold;
+
+    box-shadow:0 5px 15px rgba(0,0,0,0.15);
 
 }
