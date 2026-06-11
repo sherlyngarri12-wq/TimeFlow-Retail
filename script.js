@@ -1212,10 +1212,17 @@ function mostrarAlmacen(){
 
     console.table(almacen);
 
-}
+    alert(
+    "Ubicaciones cargadas: " +
+    almacen.length
+    );
 
-window.onload = function(){
+    window.onload = function(){
 
     inicializarAlmacen();
+
+    mostrarAlmacen();
+
+}
 
 }
