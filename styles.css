@@ -331,7 +331,29 @@ button:hover{
 .oficinas,
 .entrada,
 .recepcion,
-.despacho
+.despacho{
+
+    background:white;
+
+    border:3px solid #1D2D44;
+
+    width:220px;
+
+    height:120px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:12px;
+
+    box-shadow:0 4px 10px rgba(0,0,0,0.15);
+
+}
 
     border:3px solid #1D2D44;
 
@@ -357,9 +379,9 @@ box-shadow:0 4px 10px rgba(0,0,0,0.15);
 
     color:white;
 
-    width:450px;
+    width:500px;
 
-    height:120px;
+    height:140px;
 
     display:flex;
 
@@ -376,6 +398,8 @@ box-shadow:0 4px 10px rgba(0,0,0,0.15);
     box-shadow:0 5px 15px rgba(0,0,0,0.15);
 
 }
+
+   
 .rutas{
 
     background:white;
@@ -440,11 +464,11 @@ height:120px;
 
 .rutas{
 
-    margin-top:25px;
+    margin-top:40px;
 
-    background:white;
+    background:#1D2D44;
 
-    border:3px solid #1D2D44;
+    color:white;
 
     border-radius:15px;
 
@@ -454,10 +478,9 @@ height:120px;
 
     font-weight:bold;
 
-    box-shadow:0 4px 12px rgba(0,0,0,0.15);
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
 
 }
-
 .entrada-camiones{
 
     margin-top:20px;
@@ -475,5 +498,31 @@ height:120px;
     font-weight:bold;
 
     box-shadow:0 5px 15px rgba(0,0,0,0.15);
+
+}
+
+.fila-superior{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-top:30px;
+
+    gap:20px;
+
+}
+
+.fila-inferior{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:100px;
+
+    margin-top:30px;
 
 }
