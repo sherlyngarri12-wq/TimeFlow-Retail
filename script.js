@@ -1,6 +1,10 @@
 let tiempoGlobal = 0;
+
 let cajasGlobal = 0;
+
 let clientesGlobal = 0;
+
+let almacen = [];
 
 let eficienciaGlobal = 0;
 
@@ -1172,5 +1176,46 @@ function agregarPosicion(){
     document.getElementById(
     "nuevaPosicion"
     ).value = "";
+
+}
+
+function inicializarAlmacen(){
+
+    almacen = [];
+
+    const ubicaciones =
+    document.querySelectorAll(".ubicacion");
+
+    ubicaciones.forEach(caja => {
+
+        almacen.push({
+
+            ubicacion:caja.id,
+
+            producto:"",
+
+            cantidad:0,
+
+            proveedor:"",
+
+            caducidad:"",
+
+            estado:"vacia"
+
+        });
+
+    });
+
+}
+
+function mostrarAlmacen(){
+
+    console.table(almacen);
+
+}
+
+window.onload = function(){
+
+    inicializarAlmacen();
 
 }
