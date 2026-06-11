@@ -292,7 +292,7 @@ button:hover{
 
     color:white;
 
-    height:140px;
+    height:180px;
 
     border:4px dashed #d9d9d9;
 
@@ -318,211 +318,58 @@ button:hover{
 
 }
 
-.zona-almacen{
+.ubicacion.vacia{
 
-    display:flex;
-
-    justify-content:space-between;
-
-    margin-top:30px;
+    background:#4f4f4f;
 
 }
 
-.oficinas,
-.entrada,
-.recepcion,
-.despacho{
+.ubicacion.ocupada{
+
+    background:#2A9D8F;
+
+}
+
+.ubicacion.alerta{
+
+    background:#E9C46A;
+
+    color:black;
+
+}
+
+.ubicacion.critica{
+
+    background:#E63946;
+
+}
+
+.panel-asignacion{
 
     background:white;
-
-    border:3px solid #1D2D44;
-
-    width:220px;
-
-    height:120px;
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:center;
-
-    align-items:center;
-
-    border-radius:12px;
-
-    box-shadow:0 4px 10px rgba(0,0,0,0.15);
-
-}
-
-    border:3px solid #1D2D44;
-
-background:white;
-
-height:120px;
-
-display:flex;
-
-flex-direction:column;
-
-justify-content:center;
-
-align-items:center;
-
-box-shadow:0 4px 10px rgba(0,0,0,0.15);
-
-}
-
-.patio{
-
-    background:#8a8a8a;
-
-    color:white;
-
-    width:500px;
-
-    height:140px;
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:center;
-
-    align-items:center;
-
-    border-radius:15px;
-
-    font-weight:bold;
-
-    box-shadow:0 5px 15px rgba(0,0,0,0.15);
-
-}
-
-   
-.rutas{
-
-    background:white;
-
-    margin-top:20px;
 
     padding:20px;
-
-    text-align:center;
-
-    font-weight:bold;
-
-    border-radius:10px;
-
-}
-
-.panel-posiciones{
-
-    background:white;
-
-    padding:25px;
 
     border-radius:15px;
 
     margin-bottom:25px;
 
-    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+    box-shadow:0 4px 15px rgba(0,0,0,0.08);
 
 }
 
-.panel-posiciones input{
+.panel-asignacion input{
 
-    padding:12px;
+    padding:10px;
 
-    border:1px solid #ccc;
+    margin-right:10px;
 
-    border-radius:10px;
-
-    width:250px;
+    margin-top:10px;
 
 }
 
-.recepcion,
-.despacho{
+.panel-asignacion button{
 
-    background:white;
-
-    border:3px solid #1D2D44;
-
-    padding:20px;
-
-    width:280px;
-height:120px;
-
-    text-align:center;
-
-    border-radius:12px;
-
-    box-shadow:0 4px 10px rgba(0,0,0,0.15);
-
-}
-
-.rutas{
-
-    margin-top:40px;
-
-    background:#1D2D44;
-
-    color:white;
-
-    border-radius:15px;
-
-    padding:25px;
-
-    text-align:center;
-
-    font-weight:bold;
-
-    box-shadow:0 5px 15px rgba(0,0,0,0.2);
-
-}
-.entrada-camiones{
-
-    margin-top:20px;
-
-    background:#1D2D44;
-
-    color:white;
-
-    padding:20px;
-
-    text-align:center;
-
-    border-radius:15px;
-
-    font-weight:bold;
-
-    box-shadow:0 5px 15px rgba(0,0,0,0.15);
-
-}
-
-.fila-superior{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    margin-top:30px;
-
-    gap:20px;
-
-}
-
-.fila-inferior{
-
-    display:flex;
-
-    justify-content:center;
-
-    gap:100px;
-
-    margin-top:30px;
+    margin-top:10px;
 
 }
