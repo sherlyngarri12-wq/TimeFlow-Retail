@@ -1329,6 +1329,11 @@ function registrarMerma(){
     "productoMerma"
     ).value;
 
+    let productoRack =
+productosAlmacen.find(
+p => p.producto === producto
+);
+
     let cantidad =
     Number(
     document.getElementById(
@@ -1355,6 +1360,18 @@ function registrarMerma(){
 
     ubicacionProducto.cantidad -=
     cantidad;
+
+    if(productoRack){
+
+    productoRack.cantidad -= cantidad;
+
+    if(productoRack.cantidad < 0){
+
+        productoRack.cantidad = 0;
+
+    }
+
+}
 
     if(
     ubicacionProducto.cantidad < 0
