@@ -761,6 +761,22 @@ if(ubicacionLibre){
 
     stock + " pzs";
 
+    if(stock > 100){
+
+    caja.style.background = "#2A9D8F";
+
+}
+else if(stock > 50){
+
+    caja.style.background = "#F4A261";
+
+}
+else{
+
+    caja.style.background = "#E63946";
+
+}
+
 }
 
     let total =
@@ -1348,6 +1364,22 @@ function registrarMerma(){
 
     ubicacionProducto.cantidad +
     " pzs";
+
+    if(ubicacionProducto.cantidad > 100){
+
+    caja.style.background = "#2A9D8F";
+
+}
+else if(ubicacionProducto.cantidad > 50){
+
+    caja.style.background = "#F4A261";
+
+}
+else{
+
+    caja.style.background = "#E63946";
+
+}
 
     document.getElementById(
     "alertaAlmacen"
