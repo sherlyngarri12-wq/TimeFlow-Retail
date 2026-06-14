@@ -690,6 +690,11 @@ function agregarProducto(){
     let picking =
     document.getElementById("pickingNuevo").value;
 
+    let costo =
+Number(
+document.getElementById("costoNuevo").value
+);
+
     let estado = "Disponible";
 
 /* STOCK INSUFICIENTE */
@@ -734,15 +739,19 @@ if(ubicacionLibre){
 
     ubicacionLibre.cantidad = stock;
 
+    ubicacionLibre.costo = costo;
+
     productosAlmacen.push({
 
-        producto: producto,
+    producto: producto,
 
-        cantidad: stock,
+    cantidad: Number(stock),
 
-        ubicacion: ubicacionLibre.ubicacion
+    costo: costo,
 
-    });
+    ubicacion: ubicacionLibre.ubicacion
+
+});
 
     let caja =
     document.getElementById(
@@ -1275,19 +1284,21 @@ function inicializarAlmacen(){
 
         almacen.push({
 
-            ubicacion:caja.id,
+    ubicacion:caja.id,
 
-            producto:"",
+    producto:"",
 
-            cantidad:0,
+    cantidad:0,
 
-            proveedor:"",
+    costo:0,
 
-            caducidad:"",
+    proveedor:"",
 
-            estado:"vacia"
+    caducidad:"",
 
-        });
+    estado:"vacia"
+
+});
 
     });
 
@@ -1387,6 +1398,38 @@ else{
 
     "⚠ Merma registrada en " +
     ubicacionProducto.producto;
+
+    mermaGlobal += cantidad;
+
+    let perdidaDinero =
+
+cantidad *
+ubicacionProducto.costo;
+
+document.getElementById(
+"porcentajeMerma"
+).innerText =
+mermaGlobal + "%";
+
+document.getElementById(
+"productosPerdidos"
+).innerText =
+mermaGlobal;
+
+let impactoActual =
+
+parseFloat(
+document.getElementById(
+"impactoFinanciero"
+).innerText.replace("$","")
+);
+
+impactoActual += perdidaDinero;
+
+document.getElementById(
+"impactoFinanciero"
+).innerText =
+"$" + impactoActual;
 
     alert(
     "Merma registrada correctamente"

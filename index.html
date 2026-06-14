@@ -256,9 +256,10 @@ style="display:none;">
 
     <tr>
         <th>Producto</th>
-        <th>Stock</th>
-        <th>Picking</th>
-        <th>Estado</th>
+<th>Stock</th>
+<th>Picking</th>
+<th>Costo</th>
+<th>Estado</th>
     </tr>
 
     <tbody id="tablaInventario">
@@ -285,6 +286,10 @@ style="display:none;">
     id="pickingNuevo"
     placeholder="Picking">
 
+    <input
+type="number"
+id="costoNuevo"
+placeholder="Costo Unitario ($)">
     <button onclick="agregarProducto()">
         Agregar Producto
     </button>
