@@ -1,6 +1,13 @@
 body{
     font-family:Arial,sans-serif;
-    background:#E9ECEF;
+
+    background:
+    linear-gradient(
+    135deg,
+    #EEF2F7,
+    #DCE4EE
+    );
+
     margin:0;
 }
 
@@ -16,10 +23,26 @@ body{
 .login-box{
     background:white;
     padding:50px;
-    border-radius:20px;
-    width:350px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.12);
+
+    border-radius:25px;
+
+    width:380px;
+
+    box-shadow:
+    0 20px 50px rgba(
+    0,0,0,0.15
+    );
+
     text-align:center;
+
+    transition:0.3s;
+}
+
+.login-box:hover{
+
+    transform:
+    translateY(-5px);
+
 }
 
 .login-box h1{
@@ -40,6 +63,20 @@ body{
     border-radius:10px;
     font-size:16px;
     box-sizing:border-box;
+    transition:0.3s;
+}
+
+.login-box input:focus{
+
+    outline:none;
+
+    border:1px solid #3E5C76;
+
+    box-shadow:
+    0 0 10px rgba(
+    62,92,118,0.3
+    );
+
 }
 
 .login-box button{
@@ -62,9 +99,15 @@ body{
 }
 
 .sidebar h2{
+
     color:white;
+
     margin-bottom:40px;
-    font-size:32px;
+
+    font-size:38px;
+
+    letter-spacing:1px;
+
 }
 
 .sidebar button{
@@ -149,7 +192,15 @@ h1{
 }
 
 .card:hover{
-    transform:translateY(-5px);
+
+    transform:
+    translateY(-8px);
+
+    box-shadow:
+    0 15px 30px rgba(
+    0,0,0,0.15
+    );
+
 }
 
 /* TABLAS */
@@ -191,7 +242,17 @@ button{
 }
 
 button:hover{
+
     background:#3E5C76;
+
+    transform:
+    translateY(-3px);
+
+    box-shadow:
+    0 8px 20px rgba(
+    29,45,68,0.3
+    );
+
 }
 
 /* ALERTAS / HISTORIAL / GRAFICA */
@@ -385,5 +446,29 @@ button:hover{
     border-radius:20px;
 
     transition:1s;
+
+}
+
+.slogan{
+
+    color:#7A7A7A;
+
+    font-size:14px;
+
+    margin-top:-15px;
+
+    margin-bottom:25px;
+
+    font-style:italic;
+
+}
+
+.version{
+
+    margin-top:20px;
+
+    color:#888;
+
+    font-size:12px;
 
 }
