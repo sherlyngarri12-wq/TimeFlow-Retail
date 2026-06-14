@@ -746,6 +746,8 @@ nuevaFila.innerHTML =
 "<td>$" + costo + "</td>" +
 "<td>" + estado + "</td>";
 
+tabla.appendChild(nuevaFila);
+
 let ubicacionLibre = almacen.find(
 u => u.producto === ""
 );
@@ -1236,8 +1238,6 @@ function registrarJornada(){
     "<td>" + horas + " hrs</td>";
 
     tabla.appendChild(fila);
-
-   tabla.appendChild(nuevaFila);
 
 inventarioGuardado.push({
 

@@ -294,11 +294,23 @@ button:hover{
 }
 
 #barraInterna{
-    width:92%;
+
+    width:0%;
+
     height:100%;
-    background:linear-gradient(90deg,#1D3557,#457B9D);
+
+    background:
+    linear-gradient(
+    90deg,
+    #E63946,
+    #F4A261,
+    #2A9D8F
+    );
+
     border-radius:20px;
+
     transition:1s;
+
 }
 
 /* PANEL */
