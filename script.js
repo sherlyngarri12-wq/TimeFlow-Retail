@@ -296,6 +296,11 @@ if(eficiencia < 10){
 
 }
 
+document.getElementById(
+"barraIndicadores"
+).style.width =
+eficiencia + "%";
+
 if(eficiencia >= 85){
 
     document.getElementById("estadoOperacion").innerText =
@@ -740,8 +745,6 @@ nuevaFila.innerHTML =
 "<td>" + picking + "</td>" +
 "<td>$" + costo + "</td>" +
 "<td>" + estado + "</td>";
-
-tabla.appendChild(nuevaFila);
 
 let ubicacionLibre = almacen.find(
 u => u.producto === ""
@@ -1311,6 +1314,24 @@ function agregarPosicion(){
     "nuevaPosicion"
     ).value = "";
 
+    almacen.push({
+
+    ubicacion: posicion,
+
+    producto: "",
+
+    cantidad: 0,
+
+    costo: 0,
+
+    proveedor: "",
+
+    caducidad: "",
+
+    estado: "vacia"
+
+});
+
 }
 
 function inicializarAlmacen(){
@@ -1559,5 +1580,67 @@ function cargarInventario(){
         tabla.appendChild(fila);
 
     });
+
+}
+
+function asignarProductoUbicacion(){
+
+    let producto =
+    document.getElementById(
+    "productoUbicacion"
+    ).value;
+
+    let cantidad =
+    Number(
+    document.getElementById(
+    "cantidadUbicacion"
+    ).value
+    );
+
+    let ubicacion =
+    document.getElementById(
+    "ubicacionDestino"
+    ).value;
+
+    let caja =
+    document.getElementById(
+    ubicacion
+    );
+
+    if(!caja){
+
+        alert("Ubicación no encontrada");
+
+        return;
+
+    }
+
+    caja.innerHTML =
+
+    "<strong>" + ubicacion + "</strong><br><br>" +
+
+    producto +
+
+    "<br>" +
+
+    cantidad + " pzs";
+
+    if(cantidad > 100){
+
+        caja.style.background = "#2A9D8F";
+
+    }
+    else if(cantidad > 50){
+
+        caja.style.background = "#F4A261";
+
+    }
+    else{
+
+        caja.style.background = "#E63946";
+
+    }
+
+    alert("Producto asignado");
 
 }
