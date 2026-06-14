@@ -187,8 +187,30 @@ if(rendimiento < 10){
 
 }
 
-document.getElementById("barraInterna").style.width =
+let barraDashboard =
+document.getElementById("barraInterna");
+
+barraDashboard.style.width =
 rendimiento + "%";
+
+if(rendimiento < 40){
+
+    barraDashboard.style.background =
+    "#E63946";
+
+}
+else if(rendimiento < 70){
+
+    barraDashboard.style.background =
+    "#F4A261";
+
+}
+else{
+
+    barraDashboard.style.background =
+    "#2A9D8F";
+
+}
 
 document.getElementById(
 "rendimientoCajas"
@@ -1057,6 +1079,30 @@ if(merma >= 15){
 
 }
 
+inventarioGuardado.push({
+
+    producto: producto,
+
+    stock: stock,
+
+    picking: picking,
+
+    costo: costo,
+
+    estado: estado
+
+});
+
+localStorage.setItem(
+
+    "inventario",
+
+    JSON.stringify(
+    inventarioGuardado
+    )
+
+);
+
     alert("Producto agregado correctamente");
 
 }
@@ -1238,30 +1284,6 @@ function registrarJornada(){
     "<td>" + horas + " hrs</td>";
 
     tabla.appendChild(fila);
-
-inventarioGuardado.push({
-
-    producto: producto,
-
-    stock: stock,
-
-    picking: picking,
-
-    costo: costo,
-
-    estado: estado
-
-});
-
-localStorage.setItem(
-
-    "inventario",
-
-    JSON.stringify(
-    inventarioGuardado
-    )
-
-);
 
     alert(
     "Jornada registrada"
