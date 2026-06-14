@@ -1432,6 +1432,44 @@ document.getElementById(
 ).innerText =
 "$" + impactoActual;
 
+let impactoOperativo = mermaGlobal;
+
+if(impactoOperativo > 100){
+
+    impactoOperativo = 100;
+
+}
+
+document.getElementById(
+"barraMerma"
+).style.width =
+impactoOperativo + "%";
+
+if(impactoOperativo < 30){
+
+    document.getElementById(
+    "barraMerma"
+    ).style.background =
+    "#2A9D8F";
+
+}
+else if(impactoOperativo < 70){
+
+    document.getElementById(
+    "barraMerma"
+    ).style.background =
+    "#F4A261";
+
+}
+else{
+
+    document.getElementById(
+    "barraMerma"
+    ).style.background =
+    "#E63946";
+
+}
+
     alert(
     "Merma registrada correctamente"
     );
