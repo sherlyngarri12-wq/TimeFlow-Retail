@@ -16,6 +16,14 @@ let mermaGlobal = 0;
 
 let stockBajoGlobal = 0;
 
+let inventarioGuardado =
+
+JSON.parse(
+localStorage.getItem(
+"inventario"
+)
+) || [];
+
 function login(){
 
     /* =========================
@@ -1226,6 +1234,30 @@ function registrarJornada(){
 
     tabla.appendChild(fila);
 
+    inventarioGuardado.push({
+
+    producto: producto,
+
+    stock: stock,
+
+    picking: picking,
+
+    costo: costo,
+
+    estado: estado
+
+});
+
+localStorage.setItem(
+
+    "inventario",
+
+    JSON.stringify(
+    inventarioGuardado
+    )
+
+);
+
     alert(
     "Jornada registrada"
     );
@@ -1319,6 +1351,8 @@ function mostrarAlmacen(){
 window.onload = function(){
 
     inicializarAlmacen();
+
+    cargarInventario();
 
 };
 
@@ -1495,5 +1529,33 @@ else{
     alert(
     "Merma registrada correctamente"
     );
+
+}
+
+function cargarInventario(){
+
+    let tabla =
+    document.getElementById(
+    "tablaInventario"
+    );
+
+    inventarioGuardado.forEach(
+
+    item => {
+
+        let fila =
+        document.createElement("tr");
+
+        fila.innerHTML =
+
+        "<td>" + item.producto + "</td>" +
+        "<td>" + item.stock + "</td>" +
+        "<td>" + item.picking + "</td>" +
+        "<td>$" + item.costo + "</td>" +
+        "<td>" + item.estado + "</td>";
+
+        tabla.appendChild(fila);
+
+    });
 
 }
