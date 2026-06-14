@@ -725,6 +725,7 @@ nuevaFila.innerHTML =
 "<td>" + producto + "</td>" +
 "<td>" + stock + "</td>" +
 "<td>" + picking + "</td>" +
+"<td>$" + costo + "</td>" +
 "<td>" + estado + "</td>";
 
 tabla.appendChild(nuevaFila);
