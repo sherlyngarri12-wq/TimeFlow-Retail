@@ -378,11 +378,9 @@ button:hover{
 
     height:100%;
 
-    background:linear-gradient(
-    90deg,
-    #E63946,
-    #FF6B6B
-    );
+    width:0%;
+
+    background:#E63946;
 
     border-radius:20px;
 

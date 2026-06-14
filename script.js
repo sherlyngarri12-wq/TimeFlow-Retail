@@ -406,6 +406,11 @@ document.getElementById(
 merma + "%";
 
 document.getElementById(
+"barraMerma"
+).style.width =
+mermaGlobal + "%";
+
+document.getElementById(
 "productosPerdidos"
 ).innerText =
 Math.round(merma / 2);
