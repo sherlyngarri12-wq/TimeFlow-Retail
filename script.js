@@ -6,6 +6,8 @@ let clientesGlobal = 0;
 
 let almacen = [];
 
+let productosAlmacen = [];
+
 let eficienciaGlobal = 0;
 
 let capacidadGlobal = 0;
@@ -722,6 +724,45 @@ nuevaFila.innerHTML =
 
 tabla.appendChild(nuevaFila);
 
+let ubicacionLibre = almacen.find(
+u => u.producto === ""
+);
+
+if(ubicacionLibre){
+
+    ubicacionLibre.producto = producto;
+
+    ubicacionLibre.cantidad = stock;
+
+    productosAlmacen.push({
+
+        producto: producto,
+
+        cantidad: stock,
+
+        ubicacion: ubicacionLibre.ubicacion
+
+    });
+
+    let caja =
+    document.getElementById(
+    ubicacionLibre.ubicacion
+    );
+
+    caja.innerHTML =
+
+    "<strong>" +
+    ubicacionLibre.ubicacion +
+    "</strong><br><br>" +
+
+    producto +
+
+    "<br>" +
+
+    stock + " pzs";
+
+}
+
     let total =
     document.querySelectorAll(
     "#tablaInventario tr"
@@ -1212,17 +1253,10 @@ function mostrarAlmacen(){
 
     console.table(almacen);
 
-    alert(
-    "Ubicaciones cargadas: " +
-    almacen.length
-    );
+}
 
-    window.onload = function(){
+window.onload = function(){
 
     inicializarAlmacen();
 
-    mostrarAlmacen();
-
-}
-
-}
+};
