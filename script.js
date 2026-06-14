@@ -1234,7 +1234,9 @@ function registrarJornada(){
 
     tabla.appendChild(fila);
 
-    inventarioGuardado.push({
+   tabla.appendChild(nuevaFila);
+
+inventarioGuardado.push({
 
     producto: producto,
 
