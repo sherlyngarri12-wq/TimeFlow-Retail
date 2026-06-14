@@ -1060,6 +1060,34 @@ document.getElementById(
 
     tabla.appendChild(fila);
 
+    let ubicacionProducto = almacen.find(
+u => u.producto.toLowerCase() === producto.toLowerCase()
+);
+
+if(ubicacionProducto){
+
+    ubicacionProducto.cantidad += Number(cantidad);
+
+    let caja =
+    document.getElementById(
+    ubicacionProducto.ubicacion
+    );
+
+    caja.innerHTML =
+
+    "<strong>" +
+    ubicacionProducto.ubicacion +
+    "</strong><br><br>" +
+
+    ubicacionProducto.producto +
+
+    "<br>" +
+
+    ubicacionProducto.cantidad +
+    " pzs";
+
+}
+
     alert(
     "Devolución registrada"
     );
@@ -1260,3 +1288,76 @@ window.onload = function(){
     inicializarAlmacen();
 
 };
+
+function registrarMerma(){
+
+    let producto =
+    document.getElementById(
+    "productoMerma"
+    ).value;
+
+    let cantidad =
+    Number(
+    document.getElementById(
+    "cantidadMerma"
+    ).value
+    );
+
+    let ubicacionProducto =
+    almacen.find(
+    u =>
+    u.producto.toLowerCase() ===
+    producto.toLowerCase()
+    );
+
+    if(!ubicacionProducto){
+
+        alert(
+        "Producto no encontrado"
+        );
+
+        return;
+
+    }
+
+    ubicacionProducto.cantidad -=
+    cantidad;
+
+    if(
+    ubicacionProducto.cantidad < 0
+    ){
+
+        ubicacionProducto.cantidad = 0;
+
+    }
+
+    let caja =
+    document.getElementById(
+    ubicacionProducto.ubicacion
+    );
+
+    caja.innerHTML =
+
+    "<strong>" +
+    ubicacionProducto.ubicacion +
+    "</strong><br><br>" +
+
+    ubicacionProducto.producto +
+
+    "<br>" +
+
+    ubicacionProducto.cantidad +
+    " pzs";
+
+    document.getElementById(
+    "alertaAlmacen"
+    ).innerText =
+
+    "⚠ Merma registrada en " +
+    ubicacionProducto.producto;
+
+    alert(
+    "Merma registrada correctamente"
+    );
+
+}
