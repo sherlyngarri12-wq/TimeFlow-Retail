@@ -735,6 +735,15 @@ Number(
 document.getElementById("costoNuevo").value
 );
 
+let minimo =
+Math.round(stock * 0.30);
+
+let maximo =
+Math.round(stock * 1.50);
+
+let reorden =
+Math.round(stock * 0.50);
+
 let codigo =
 document.getElementById(
 "codigoNuevo"
@@ -744,27 +753,6 @@ let caducidad =
 document.getElementById(
 "caducidadNuevo"
 ).value;
-
-let minimo =
-Number(
-document.getElementById(
-"minimoNuevo"
-).value
-);
-
-let maximo =
-Number(
-document.getElementById(
-"maximoNuevo"
-).value
-);
-
-let reorden =
-Number(
-document.getElementById(
-"reordenNuevo"
-).value
-);
 
     let estado = "Disponible";
 
@@ -779,21 +767,22 @@ if(Number(picking) > Number(stock)){
 
 /* STOCK BAJO */
 
-if(Number(stock) <= reorden){
+if(Number(stock) <= minimo){
 
     estado =
-    "<span style='color:red;'>Reorden requerido</span>";
+    "<span style='color:red;'>Riesgo de desabasto</span>";
 
 }
-else if(Number(stock) <= minimo){
+else if(Number(stock) <= reorden){
 
     estado =
-    "<span style='color:orange;'>Stock bajo</span>";
+    "<span style='color:orange;'>Reorden requerido</span>";
 
 }
+else{
 
     estado =
-    "<span style='color:orange;'>Bajo stock</span>";
+    "<span style='color:green;'>Disponible</span>";
 
 }
 
@@ -833,15 +822,22 @@ if(ubicacionLibre){
 
     ubicacionLibre.costo = costo;
 
-    productosAlmacen.push({
+   productosAlmacen.push({
 
-    producto: producto,
+producto: producto,
 
-    cantidad: Number(stock),
+cantidad: Number(stock),
 
-    costo: costo,
+costo: costo,
 
-    ubicacion: ubicacionLibre.ubicacion
+minimo: minimo,
+
+maximo: maximo,
+
+reorden: reorden,
+
+ubicacion:
+ubicacionLibre.ubicacion
 
 });
 
@@ -1074,7 +1070,7 @@ document.getElementById(
 let ahorro =
 
 (Math.max(0,
-(costo * stock) * 0.15
+(costo * stock) * 0.25
 ));
 
 document.getElementById(
@@ -1177,6 +1173,8 @@ localStorage.setItem(
 );
 
     alert("Producto agregado correctamente");
+
+}
 
 
 function registrarDevolucion(){

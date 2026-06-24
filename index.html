@@ -59,6 +59,11 @@ onclick="mostrarSeccion('inventarioSection', this)">
 </button>
 
 <button class="menu-btn"
+onclick="mostrarSeccion('abastoSection', this)">
+    Abasto Inteligente
+</button>
+
+<button class="menu-btn"
 onclick="mostrarSeccion('indicadoresSection', this)">
     Indicadores
 </button>
@@ -142,6 +147,11 @@ style="display:none;">
                 <h2>0%</h2>
                 <p>Eficiencia</p>
             </div>
+
+            <div class="card">
+    <h2 id="ahorroEstimado">$0</h2>
+    <p>Ahorro estimado</p>
+</div>
 
         </div>
 
@@ -308,25 +318,73 @@ placeholder="Costo Unitario ($)">
 type="date"
 id="caducidadNuevo">
 
-<input
-type="number"
-id="minimoNuevo"
-placeholder="Stock mínimo">
-
-<input
-type="number"
-id="maximoNuevo"
-placeholder="Stock máximo">
-
-<input
-type="number"
-id="reordenNuevo"
-placeholder="Punto de reorden">
     <button onclick="agregarProducto()">
         Agregar Producto
     </button>
 
 </div>
+
+</div>
+
+<!-- ABASTO -->
+
+<div class="section"
+id="abastoSection"
+style="display:none;">
+
+    <div class="dashboard">
+
+        <h1>Abasto Inteligente</h1>
+
+        <div class="cards">
+
+            <div class="card">
+
+                <h2 id="productosReorden">
+                    0
+                </h2>
+
+                <p>Productos a reordenar</p>
+
+            </div>
+
+            <div class="card">
+
+                <h2 id="productosCriticos">
+                    0
+                </h2>
+
+                <p>Productos críticos</p>
+
+            </div>
+
+        </div>
+
+        <table>
+
+            <tr>
+
+                <th>Producto</th>
+
+                <th>Stock</th>
+
+                <th>Mínimo</th>
+
+                <th>Máximo</th>
+
+                <th>Reorden</th>
+
+                <th>Estado</th>
+
+            </tr>
+
+            <tbody id="tablaAbasto">
+
+            </tbody>
+
+        </table>
+
+    </div>
 
 </div>
 
