@@ -754,7 +754,49 @@ document.getElementById(
 "caducidadNuevo"
 ).value;
 
-    let estado = "Disponible";
+let estadoCaducidad = "🟢 Vigente";
+
+let hoy = new Date();
+
+let fechaCad = new Date(caducidad);
+
+let diferencia =
+(fechaCad - hoy) /
+(1000 * 60 * 60 * 24);
+
+if(diferencia <= 7){
+
+    estadoCaducidad =
+    "🔴 Caduca pronto";
+
+}
+else if(diferencia <= 30){
+
+    estadoCaducidad =
+    "🟡 Próximo a vencer";
+
+}
+
+    let estado = "🟢 Disponible";
+
+if(Number(picking) > Number(stock)){
+
+    estado =
+    "🔴 No disponible";
+
+}
+else if(Number(stock) <= reorden){
+
+    estado =
+    "🔴 Reorden requerido";
+
+}
+else if(Number(stock) <= minimo){
+
+    estado =
+    "🟡 Stock bajo";
+
+}
 
 /* STOCK INSUFICIENTE */
 
@@ -804,7 +846,11 @@ nuevaFila.innerHTML =
 
 "<td>$" + costo + "</td>" +
 
-"<td>" + caducidad + "</td>" +
+"<td>" +
+caducidad +
+"<br>" +
+estadoCaducidad +
+"</td>" +
 
 "<td>" + estado + "</td>";
 
@@ -840,6 +886,32 @@ ubicacion:
 ubicacionLibre.ubicacion
 
 });
+
+if(stock <= reorden){
+
+    document.getElementById(
+    "alertaReorden"
+    ).innerHTML =
+
+    "<div class='alertas'>" +
+
+    "<h3>⚠ Reorden sugerido</h3>" +
+
+    "<p><strong>" +
+    producto +
+    "</strong></p>" +
+
+    "<p>Stock actual: " +
+    stock +
+    "</p>" +
+
+    "<p>Punto de reorden: " +
+    reorden +
+    "</p>" +
+
+    "</div>";
+
+}
 
     let caja =
     document.getElementById(
