@@ -822,8 +822,6 @@ else if(Number(stock) <= reorden){
 
 }
 
-}
-
     let tabla =
     document.getElementById("tablaInventario");
 
@@ -1288,7 +1286,8 @@ localStorage.setItem(
 );
 
     alert("Producto agregado correctamente");
-    
+
+}
 
 function registrarDevolucion(){
 
