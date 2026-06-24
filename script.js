@@ -735,6 +735,37 @@ Number(
 document.getElementById("costoNuevo").value
 );
 
+let codigo =
+document.getElementById(
+"codigoNuevo"
+).value;
+
+let caducidad =
+document.getElementById(
+"caducidadNuevo"
+).value;
+
+let minimo =
+Number(
+document.getElementById(
+"minimoNuevo"
+).value
+);
+
+let maximo =
+Number(
+document.getElementById(
+"maximoNuevo"
+).value
+);
+
+let reorden =
+Number(
+document.getElementById(
+"reordenNuevo"
+).value
+);
+
     let estado = "Disponible";
 
 /* STOCK INSUFICIENTE */
@@ -748,7 +779,18 @@ if(Number(picking) > Number(stock)){
 
 /* STOCK BAJO */
 
-else if(Number(stock) < 30){
+if(Number(stock) <= reorden){
+
+    estado =
+    "<span style='color:red;'>Reorden requerido</span>";
+
+}
+else if(Number(stock) <= minimo){
+
+    estado =
+    "<span style='color:orange;'>Stock bajo</span>";
+
+}
 
     estado =
     "<span style='color:orange;'>Bajo stock</span>";
@@ -762,10 +804,19 @@ else if(Number(stock) < 30){
 document.createElement("tr");
 
 nuevaFila.innerHTML =
+
+"<td>" + codigo + "</td>" +
+
 "<td>" + producto + "</td>" +
+
 "<td>" + stock + "</td>" +
+
 "<td>" + picking + "</td>" +
+
 "<td>$" + costo + "</td>" +
+
+"<td>" + caducidad + "</td>" +
+
 "<td>" + estado + "</td>";
 
 tabla.appendChild(nuevaFila);
@@ -1020,6 +1071,18 @@ document.getElementById(
 ).innerText =
 "$" + (merma * 250);
 
+let ahorro =
+
+(Math.max(0,
+(costo * stock) * 0.15
+));
+
+document.getElementById(
+"ahorroEstimado"
+).innerText =
+"$" +
+ahorro.toFixed(0);
+
 document.getElementById(
 "barraMerma"
 ).style.width =
@@ -1081,6 +1144,8 @@ if(merma >= 15){
 
 inventarioGuardado.push({
 
+    codigo: codigo,
+
     producto: producto,
 
     stock: stock,
@@ -1088,6 +1153,14 @@ inventarioGuardado.push({
     picking: picking,
 
     costo: costo,
+
+    caducidad: caducidad,
+
+    minimo: minimo,
+
+    maximo: maximo,
+
+    reorden: reorden,
 
     estado: estado
 
@@ -1105,7 +1178,6 @@ localStorage.setItem(
 
     alert("Producto agregado correctamente");
 
-}
 
 function registrarDevolucion(){
 
@@ -1593,11 +1665,19 @@ function cargarInventario(){
 
         fila.innerHTML =
 
-        "<td>" + item.producto + "</td>" +
-        "<td>" + item.stock + "</td>" +
-        "<td>" + item.picking + "</td>" +
-        "<td>$" + item.costo + "</td>" +
-        "<td>" + item.estado + "</td>";
+"<td>" + item.codigo + "</td>" +
+
+"<td>" + item.producto + "</td>" +
+
+"<td>" + item.stock + "</td>" +
+
+"<td>" + item.picking + "</td>" +
+
+"<td>$" + item.costo + "</td>" +
+
+"<td>" + item.caducidad + "</td>" +
+
+"<td>" + item.estado + "</td>";
 
         tabla.appendChild(fila);
 

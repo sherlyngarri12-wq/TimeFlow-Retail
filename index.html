@@ -262,12 +262,13 @@ style="display:none;">
       <table>
 
     <tr>
-        <th>Producto</th>
+        <th>Código</th>
+<th>Producto</th>
 <th>Stock</th>
 <th>Picking</th>
 <th>Costo</th>
+<th>Caducidad</th>
 <th>Estado</th>
-    </tr>
 
     <tbody id="tablaInventario">
 
@@ -281,6 +282,11 @@ style="display:none;">
 
     <h2>Agregar Producto</h2>
 
+    <input
+type="text"
+id="codigoNuevo"
+placeholder="Código Producto">
+    
     <input type="text"
     id="productoNuevo"
     placeholder="Producto">
@@ -297,6 +303,25 @@ style="display:none;">
 type="number"
 id="costoNuevo"
 placeholder="Costo Unitario ($)">
+
+<input
+type="date"
+id="caducidadNuevo">
+
+<input
+type="number"
+id="minimoNuevo"
+placeholder="Stock mínimo">
+
+<input
+type="number"
+id="maximoNuevo"
+placeholder="Stock máximo">
+
+<input
+type="number"
+id="reordenNuevo"
+placeholder="Punto de reorden">
     <button onclick="agregarProducto()">
         Agregar Producto
     </button>
