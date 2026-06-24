@@ -1827,4 +1827,28 @@ function reiniciarInventario(){
         return;
     }
 
+    localStorage.removeItem("inventario");
+
+    inventarioGuardado = [];
+
+    document.getElementById(
+        "tablaInventario"
+    ).innerHTML = "";
+
+    document.getElementById(
+        "totalProductos"
+    ).innerText = "0";
+
+    document.getElementById(
+        "bajoStock"
+    ).innerText = "0";
+
+    document.getElementById(
+        "capacidadAlmacen"
+    ).innerText = "0%";
+
+    alert(
+        "Inventario reiniciado correctamente"
+    );
+
 }
