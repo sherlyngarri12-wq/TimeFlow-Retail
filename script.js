@@ -1744,3 +1744,15 @@ function asignarProductoUbicacion(){
     alert("Producto asignado");
 
 }
+
+function reiniciarInventario(){
+
+    if(
+        !confirm(
+        "¿Deseas borrar todos los productos registrados?"
+        )
+    ){
+        return;
+    }
+
+}
