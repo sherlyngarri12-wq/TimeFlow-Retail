@@ -821,10 +821,6 @@ else if(Number(stock) <= reorden){
     "<span style='color:orange;'>Reorden requerido</span>";
 
 }
-else{
-
-    estado =
-    "<span style='color:green;'>Disponible</span>";
 
 }
 
@@ -887,6 +883,36 @@ ubicacionLibre.ubicacion
 
 });
 
+let tablaAbasto =
+document.getElementById(
+"tablaAbasto"
+);
+
+let filaAbasto =
+document.createElement("tr");
+
+let estadoAbasto =
+"Normal";
+
+if(Number(stock) <= minimo){
+
+    estadoAbasto =
+    "🔴 Crítico";
+
+}
+else if(Number(stock) <= reorden){
+
+    estadoAbasto =
+    "🟠 Reorden";
+
+}
+else{
+
+    estadoAbasto =
+    "🟢 Normal";
+
+}
+
 if(stock <= reorden){
 
     document.getElementById(
@@ -913,6 +939,23 @@ if(stock <= reorden){
 
 }
 
+filaAbasto.innerHTML =
+
+"<td>" + producto + "</td>" +
+
+"<td>" + stock + "</td>" +
+
+"<td>" + minimo + "</td>" +
+
+"<td>" + maximo + "</td>" +
+
+"<td>" + reorden + "</td>" +
+
+"<td>" + estadoAbasto + "</td>";
+
+tablaAbasto.appendChild(
+filaAbasto
+);
     let caja =
     document.getElementById(
     ubicacionLibre.ubicacion
@@ -1245,9 +1288,7 @@ localStorage.setItem(
 );
 
     alert("Producto agregado correctamente");
-
-}
-
+    
 
 function registrarDevolucion(){
 
