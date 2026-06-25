@@ -980,6 +980,8 @@ filaAbasto
 
 actualizarAbasto();
 
+actualizarIA();
+
     let caja =
     document.getElementById(
     ubicacionLibre.ubicacion
@@ -1946,5 +1948,46 @@ function actualizarAbasto(){
     document.getElementById(
     "productosReorden"
     ).innerText = reorden;
+
+}
+
+function actualizarIA(){
+
+    let mensaje =
+    "";
+
+    if(totalCriticos > 0){
+
+        mensaje +=
+        "<p>🚨 Se detectaron productos críticos.</p>";
+
+        mensaje +=
+        "<p>Se recomienda generar una orden de compra inmediata.</p>";
+
+    }
+
+    else if(totalReorden > 0){
+
+        mensaje +=
+        "<p>⚠ Existen productos próximos al punto de reorden.</p>";
+
+        mensaje +=
+        "<p>Se recomienda planificar el reabastecimiento.</p>";
+
+    }
+
+    else{
+
+        mensaje +=
+        "<p>✅ La operación es estable.</p>";
+
+        mensaje +=
+        "<p>No se detectan riesgos operativos.</p>";
+
+    }
+
+    document.getElementById(
+    "respuestaIA"
+    ).innerHTML = mensaje;
 
 }
