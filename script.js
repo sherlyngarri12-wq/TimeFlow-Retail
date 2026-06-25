@@ -16,7 +16,11 @@ let mermaGlobal = 0;
 
 let stockBajoGlobal = 0;
 
-let inventarioGuardado =
+let inventarioGuardado = [];
+
+let totalReorden = 0;
+
+let totalCriticos = 0;
 
 JSON.parse(
 localStorage.getItem(
@@ -911,6 +915,28 @@ else{
 
 }
 
+if(estadoAbasto.includes("Crítico")){
+
+    totalCriticos++;
+
+}
+
+if(estadoAbasto.includes("Reorden")){
+
+    totalReorden++;
+
+}
+
+document.getElementById(
+"productosCriticos"
+).innerText =
+totalCriticos;
+
+document.getElementById(
+"productosReorden"
+).innerText =
+totalReorden;
+
 if(stock <= reorden){
 
     document.getElementById(
@@ -954,6 +980,9 @@ filaAbasto.innerHTML =
 tablaAbasto.appendChild(
 filaAbasto
 );
+
+actualizarAbasto();
+
     let caja =
     document.getElementById(
     ubicacionLibre.ubicacion
@@ -1890,5 +1919,35 @@ function reiniciarInventario(){
     alert(
         "Inventario reiniciado correctamente"
     );
+
+}
+
+function actualizarAbasto(){
+
+    let criticos = 0;
+    let reorden = 0;
+
+    productosAlmacen.forEach(function(producto){
+
+        if(producto.cantidad <= producto.minimo){
+
+            criticos++;
+
+        }
+        else if(producto.cantidad <= producto.reorden){
+
+            reorden++;
+
+        }
+
+    });
+
+    document.getElementById(
+    "productosCriticos"
+    ).innerText = criticos;
+
+    document.getElementById(
+    "productosReorden"
+    ).innerText = reorden;
 
 }
