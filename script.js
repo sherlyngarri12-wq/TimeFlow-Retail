@@ -739,14 +739,11 @@ Number(
 document.getElementById("costoNuevo").value
 );
 
-let minimo =
-Math.round(stock * 0.30);
+let maximo = 500;
 
-let maximo =
-Math.round(stock * 1.50);
+let reorden = 200;
 
-let reorden =
-Math.round(stock * 0.50);
+let minimo = 100;
 
 let codigo =
 document.getElementById(
