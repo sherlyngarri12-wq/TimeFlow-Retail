@@ -930,9 +930,6 @@ if(estadoAbasto.includes("Reorden")){
 
 }
 
-totalCriticos = criticos;
-totalReorden = reorden;
-
 document.getElementById(
 "productosCriticos"
 ).innerText =
@@ -943,7 +940,7 @@ document.getElementById(
 ).innerText =
 totalReorden;
 
-if(stock <= reorden){
+if(Number(stock) <= reorden){
 
     document.getElementById(
     "alertaReorden"
@@ -1008,13 +1005,12 @@ actualizarIA();
 
     stock + " pzs";
 
-    if(stock > 100){
+    if(Number(stock) > 100){
 
     caja.style.background = "#2A9D8F";
 
 }
-else if(stock > 50){
-
+else if(Number(stock) > 50){
     caja.style.background = "#F4A261";
 
 }
@@ -1084,11 +1080,15 @@ document.getElementById(
 ).innerText
 );
 
-if(productosRiesgo >= 3){
+eficienciaActual =
 
-    eficienciaActual -= 10;
+100 -
 
-}
+(totalCriticos*15) -
+
+(totalReorden*5) -
+
+mermaGlobal;
 
 if(eficienciaActual < 10){
 
@@ -1186,10 +1186,10 @@ if(merma > 100){
 
 /* STOCK BAJO */
 
-if(stock < 30){
+if(Number(stock) <= minimo){
 
     merma += 10;
-
+    
 }
 
 /* SATURACION */
@@ -1217,11 +1217,16 @@ document.getElementById(
 ).innerText =
 "$" + (merma * 250);
 
-let ahorro =
+let ahorro = 0;
 
-(Math.max(0,
-(costo * stock) * 0.25
-));
+productosAlmacen.forEach(function(producto){
+
+    ahorro +=
+    producto.costo *
+    producto.cantidad *
+    0.25;
+
+});
 
 document.getElementById(
 "ahorroEstimado"
@@ -1322,6 +1327,10 @@ localStorage.setItem(
 
 );
 
+actualizarAbasto();
+
+actualizarIA();
+
     alert("Producto agregado correctamente");
 
 }
@@ -1400,6 +1409,10 @@ if(ubicacionProducto){
     alert(
     "Devolución registrada"
     );
+
+    actualizarAbasto();
+
+actualizarIA();
 
 }
 
@@ -1794,6 +1807,10 @@ else{
     "Merma registrada correctamente"
     );
 
+    actualizarAbasto();
+
+actualizarIA();
+
 }
 
 function cargarInventario(){
@@ -1937,11 +1954,15 @@ function actualizarAbasto(){
 
     productosAlmacen.forEach(function(producto){
 
-        if(producto.cantidad <= producto.minimo){
+        if(
+            producto.picking > producto.cantidad ||
+            producto.cantidad <= producto.minimo
+        ){
 
             criticos++;
 
         }
+
         else if(producto.cantidad <= producto.reorden){
 
             reorden++;
@@ -1950,13 +1971,14 @@ function actualizarAbasto(){
 
     });
 
-    document.getElementById(
-    "productosCriticos"
-    ).innerText = criticos;
+    totalCriticos = criticos;
+    totalReorden = reorden;
 
-    document.getElementById(
-    "productosReorden"
-    ).innerText = reorden;
+    document.getElementById("productosCriticos").innerText =
+    criticos;
+
+    document.getElementById("productosReorden").innerText =
+    reorden;
 
 }
 
