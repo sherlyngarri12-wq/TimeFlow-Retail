@@ -877,6 +877,8 @@ producto: producto,
 
 cantidad: Number(stock),
 
+picking: Number(picking),
+
 costo: costo,
 
 minimo: minimo,
@@ -898,25 +900,21 @@ document.getElementById(
 let filaAbasto =
 document.createElement("tr");
 
-let estadoAbasto =
-"Normal";
+let estadoAbasto = "🟢 Normal";
 
-if(Number(stock) <= minimo){
+if(Number(picking) > Number(stock)){
 
-    estadoAbasto =
-    "🔴 Crítico";
+    estadoAbasto = "🔴 Crítico";
+
+}
+else if(Number(stock) <= minimo){
+
+    estadoAbasto = "🔴 Crítico";
 
 }
 else if(Number(stock) <= reorden){
 
-    estadoAbasto =
-    "🟠 Reorden";
-
-}
-else{
-
-    estadoAbasto =
-    "🟢 Normal";
+    estadoAbasto = "🟠 Reorden";
 
 }
 
@@ -931,6 +929,9 @@ if(estadoAbasto.includes("Reorden")){
     totalReorden++;
 
 }
+
+totalCriticos = criticos;
+totalReorden = reorden;
 
 document.getElementById(
 "productosCriticos"
@@ -987,6 +988,8 @@ filaAbasto
 );
 
 actualizarAbasto();
+
+actualizarIA();
 
     let caja =
     document.getElementById(
