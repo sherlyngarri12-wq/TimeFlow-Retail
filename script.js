@@ -721,6 +721,14 @@ function mostrarSeccion(id, boton){
 
     boton.classList.add("active");
 
+    /* ACTUALIZAR IA */
+
+    if(id == "iaSection"){
+
+        actualizarIA();
+
+    }
+
 }
 
 function agregarProducto(){
@@ -979,8 +987,6 @@ filaAbasto
 );
 
 actualizarAbasto();
-
-actualizarIA();
 
     let caja =
     document.getElementById(
@@ -1953,41 +1959,97 @@ function actualizarAbasto(){
 
 function actualizarIA(){
 
-    let mensaje =
-    "";
+    let estado = "🟢 Operación estable";
+    let riesgo = "Bajo";
+
+    let diagnostico = "";
+
+    let recomendaciones = "";
+
+    diagnostico +=
+    "<p><strong>Productos registrados:</strong> " +
+    inventarioGuardado.length +
+    "</p>";
+
+    diagnostico +=
+    "<p><strong>Productos críticos:</strong> " +
+    totalCriticos +
+    "</p>";
+
+    diagnostico +=
+    "<p><strong>Productos por reorden:</strong> " +
+    totalReorden +
+    "</p>";
+
+    diagnostico +=
+    "<p><strong>Merma registrada:</strong> " +
+    mermaGlobal +
+    "</p>";
+
+    diagnostico +=
+    "<p><strong>Eficiencia operativa:</strong> " +
+    eficienciaGlobal +
+    "%</p>";
 
     if(totalCriticos > 0){
 
-        mensaje +=
-        "<p>🚨 Se detectaron productos críticos.</p>";
+        estado = "🔴 Riesgo Alto";
+        riesgo = "Alto";
 
-        mensaje +=
-        "<p>Se recomienda generar una orden de compra inmediata.</p>";
-
-    }
-
-    else if(totalReorden > 0){
-
-        mensaje +=
-        "<p>⚠ Existen productos próximos al punto de reorden.</p>";
-
-        mensaje +=
-        "<p>Se recomienda planificar el reabastecimiento.</p>";
+        recomendaciones +=
+        "<li>Generar orden de compra inmediata.</li>";
 
     }
 
-    else{
+    if(totalReorden > 0){
 
-        mensaje +=
-        "<p>✅ La operación es estable.</p>";
+        estado = "🟡 Atención";
+        riesgo = "Medio";
 
-        mensaje +=
-        "<p>No se detectan riesgos operativos.</p>";
+        recomendaciones +=
+        "<li>Planificar reabastecimiento.</li>";
+
+    }
+
+    if(mermaGlobal >= 20){
+
+        recomendaciones +=
+        "<li>Reducir pérdidas por merma.</li>";
+
+    }
+
+    if(eficienciaGlobal < 80){
+
+        recomendaciones +=
+        "<li>Mejorar la eficiencia operativa.</li>";
+
+    }
+
+    if(recomendaciones == ""){
+
+        recomendaciones =
+        "<li>No se detectan riesgos operativos.</li>";
 
     }
 
     document.getElementById(
-    "respuestaIA"
-    ).innerHTML = mensaje;
+    "estadoIA"
+    ).innerText =
+    estado;
+
+    document.getElementById(
+    "riesgoIA"
+    ).innerText =
+    riesgo;
+
+    document.getElementById(
+    "diagnosticoIA"
+    ).innerHTML =
+    diagnostico;
+
+    document.getElementById(
+    "recomendacionesIA"
+    ).innerHTML =
+    recomendaciones;
 
 }
