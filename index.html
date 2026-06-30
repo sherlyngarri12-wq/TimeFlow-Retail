@@ -99,6 +99,11 @@ onclick="mostrarSeccion('reportesSection', this)">
 </button>
 
 <button class="menu-btn"
+onclick="mostrarSeccion('iaSection', this)">
+    🤖 Asistente IA
+</button>
+
+<button class="menu-btn"
 onclick="mostrarSeccion('almacenSection', this)">
     Gestión de Almacén
 </button>
@@ -245,6 +250,72 @@ style="display:none;">
             <button onclick="guardarDatos()">
                 Guardar Cambios
             </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ASISTENTE IA -->
+
+<div class="section"
+id="iaSection"
+style="display:none;">
+
+    <div class="dashboard">
+
+        <h1>🤖 Asistente Inteligente</h1>
+
+        <div class="cards">
+
+            <div class="card">
+
+                <h2 id="estadoIA">
+
+                    🟢 Estable
+
+                </h2>
+
+                <p>Estado General</p>
+
+            </div>
+
+            <div class="card">
+
+                <h2 id="riesgoIA">
+
+                    Bajo
+
+                </h2>
+
+                <p>Nivel de Riesgo</p>
+
+            </div>
+
+        </div>
+
+        <div class="alertas">
+
+            <h2>Diagnóstico Inteligente</h2>
+
+            <div id="diagnosticoIA">
+
+                El sistema aún no cuenta con información suficiente para realizar un análisis.
+
+            </div>
+
+        </div>
+
+        <div class="historial">
+
+            <h2>Recomendaciones</h2>
+
+            <ul id="recomendacionesIA">
+
+                <li>Esperando información del sistema...</li>
+
+            </ul>
 
         </div>
 
